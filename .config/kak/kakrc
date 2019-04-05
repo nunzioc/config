@@ -1,0 +1,8 @@
+hook global NormalKey y|d|c %{ nop %sh{
+      printf %s "$kak_main_reg_dquote" | xsel --input --clipboard
+}}
+
+hook global InsertChar k %{ try %{
+      exec -draft hH <a-k>jk<ret> d
+        exec <esc>
+}}
