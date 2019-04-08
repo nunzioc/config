@@ -2,6 +2,11 @@
 
 abbr -a install sudo dnf install
 abbr -a search sudo dnf search
+
+# an alias for managing config files
+# use:
+# config config --local status.showUntrackedFiles no
+# to avoid showing untracked files
 alias config='/usr/bin/git --git-dir=$HOME/.configrepo/ --work-tree=$HOME'
 
 # you can modify path here

@@ -90,7 +90,11 @@ nnoremap ,html :-1read $HOME/.vim/.skeleton.html<CR>3jwf>a
 set relativenumber " show relative line number 
 set number " show current actual line number
 
-set noswapfile
+" use .vim folder for storing swap and undo files
+set swapfile 
+set backup
+set backupdir^=$HOME/.vim//
+set directory^=$HOME/.vim//
 
 " Set the working directory to wherever the open file lives
 set autochdir
@@ -112,7 +116,6 @@ set number
 
 nnoremap <C-b> :bprevious<CR>
 nnoremap ; :
-imap kj <Esc>`^
-imap lkj <Esc>`^:w<CR>
+imap jk <Esc>`^
 colorscheme desert
 nnoremap <CR> :noh<CR><CR>:<backspace>
