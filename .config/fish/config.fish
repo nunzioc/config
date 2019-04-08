@@ -2,6 +2,7 @@
 
 abbr -a install sudo dnf install
 abbr -a search sudo dnf search
+alias config='/usr/bin/git --git-dir=$HOME/.configrepo/ --work-tree=$HOME'
 
 # you can modify path here
 set -x PATH $PATH 
