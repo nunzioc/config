@@ -1,3 +1,5 @@
+# maybe use this for git prompt??
+# git branch | awk '/^\*/ { if ($2 == "(HEAD") { print substr($5, 1, length($5)-1) } else { print $2 } 
 function fish_prompt --description 'Write out the prompt'
 	set -l last_status $status
 
