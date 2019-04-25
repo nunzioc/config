@@ -2,6 +2,15 @@
 
 abbr -a install sudo dnf install
 abbr -a search sudo dnf search
+abbr -a gf git fetch -p
+abbr -a gp git pull
+abbr -a gl git log --oneline --graph --decorate
+abbr -a gc git commit -m
+abbr -a gb git branch -a
+abbr -a ga git add . -v
+abbr -a gd git diff --histogram
+abbr -a gs git status
+
 alias config='/usr/bin/git --git-dir=$HOME/.configrepo/ --work-tree=$HOME'
 
 # an alias for managing config files
