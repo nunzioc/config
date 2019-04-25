@@ -3,6 +3,19 @@
 " to my taste.
 " 
 
+
+" Expand TABs to spaces
+set expandtab
+
+" Indents are 4 spaces
+set shiftwidth=4
+
+" width of a TAB is 4
+set tabstop=4
+
+" indents have width of 4
+set shiftwidth=4
+
 " These settings come from the vimrc shipped with vim
 " Get the defaults that most users want.
 source $VIMRUNTIME/defaults.vim
