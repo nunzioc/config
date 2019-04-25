@@ -4,9 +4,15 @@ abbr -a install sudo dnf install
 abbr -a search sudo dnf search
 alias config='/usr/bin/git --git-dir=$HOME/.configrepo/ --work-tree=$HOME'
 
+# an alias for managing config files
+# use:
+# config config --local status.showUntrackedFiles no
+# to avoid showing untracked files
+alias config='/usr/bin/git --git-dir=$HOME/.configrepo/ --work-tree=$HOME'
+
 # you can modify path here
 set -x PATH $PATH 
-
+#
 # set length of prompt directories
 set -g fish_prompt_pwd_dir_length 3
 
