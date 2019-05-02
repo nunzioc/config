@@ -11,8 +11,6 @@ abbr -a ga git add . -v
 abbr -a gd git diff --histogram
 abbr -a gs git status
 
-alias config='/usr/bin/git --git-dir=$HOME/.configrepo/ --work-tree=$HOME'
-
 # an alias for managing config files
 # use:
 # config config --local status.showUntrackedFiles no
