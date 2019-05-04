@@ -41,11 +41,15 @@ source (lua ~/source/z.lua/z.lua --init fish enhanced | psub)
 
 function __z.lua_most_recent
   z -I -t .
+  clear
+  ls
   commandline -f repaint
 end
 
 function __z.lua_subdirectory
   z -I -c .
+  clear
+  ls
   commandline -f repaint
 end
 

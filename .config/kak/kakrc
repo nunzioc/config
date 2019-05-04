@@ -1,8 +1,11 @@
-hook global NormalKey y|d|c %{ nop %sh{
-      printf %s "$kak_main_reg_dquote" | xsel --input --clipboard
-}}
-
 hook global InsertChar k %{ try %{
       exec -draft hH <a-k>jk<ret> d
         exec <esc>
 }}
+
+# System Copy and Paste
+hook global NormalKey y|d|c %{ nop %sh{
+  printf %s "$kak_main_reg_dquote" | wl-copy > /dev/null 2>&1 & 
+}}
+map global user P '!wl-paste<ret>'
+map global user p '<a-!>wl-paste<ret>'
