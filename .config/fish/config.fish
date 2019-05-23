@@ -17,6 +17,9 @@ abbr -a gs git status
 # to avoid showing untracked files
 alias config='/usr/bin/git --git-dir=$HOME/.configrepo/ --work-tree=$HOME'
 
+# turn off greeting message
+set fish_greeting
+
 # you can modify path here
 set -x PATH $PATH 
 #
