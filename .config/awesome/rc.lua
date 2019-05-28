@@ -62,7 +62,7 @@ modkey = "Mod4"
 -- Table of layouts to cover with awful.layout.inc, order matters.
 awful.layout.layouts = {
     awful.layout.suit.tile,
-    -- awful.layout.suit.floating,
+    awful.layout.suit.floating,
     -- awful.layout.suit.tile.bottom,
     -- awful.layout.suit.tile.top,
     -- awful.layout.suit.fair,
@@ -78,6 +78,24 @@ awful.layout.layouts = {
     -- awful.layout.suit.corner.se,
 }
 -- }}}
+
+-- {{{ Menu
+-- Create a launcher widget and a main menu
+myawesomemenu = {
+   { "hotkeys", function() hotkeys_popup.show_help(nil, awful.screen.focused()) end },
+   { "manual", terminal .. " -e man awesome" },
+   { "edit config", editor_cmd .. " " .. awesome.conffile },
+   { "restart", awesome.restart },
+   { "quit", function() awesome.quit() end },
+}
+
+mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
+                                    { "open terminal", terminal }
+                                  }
+                        })
+
+mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
+                                     menu = mymainmenu })
 
 -- Menubar configuration
 menubar.utils.terminal = terminal -- Set the terminal for applications that require it
@@ -208,7 +226,6 @@ globalkeys = gears.table.join(
     awful.key({ modkey, }, "Escape", awful.tag.history.restore,               { description = "go back",                 group = "tag"     }),
     awful.key({ modkey, }, "j", function () awful.client.focus.byidx( 1) end, { description = "focus next by index",     group = "client"  }),
     awful.key({ modkey, }, "k", function () awful.client.focus.byidx(-1) end, { description = "focus previous by index", group = "client"  }),
-    awful.key({ modkey, }, "w", function () mymainmenu:show()            end, { description = "show main menu",          group = "awesome" }), 
 
     -- Layout manipulation
     awful.key({ modkey, "Shift"   }, "j", function () awful.client.swap.byidx(  1)    end,
