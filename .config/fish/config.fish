@@ -11,13 +11,14 @@ abbr -a ga git add . -v
 abbr -a gd git diff --histogram
 abbr -a gs git status
 
-alias config='/usr/bin/git --git-dir=$HOME/.configrepo/ --work-tree=$HOME'
-
 # an alias for managing config files
 # use:
 # config config --local status.showUntrackedFiles no
 # to avoid showing untracked files
 alias config='/usr/bin/git --git-dir=$HOME/.configrepo/ --work-tree=$HOME'
+
+# turn off greeting message
+set fish_greeting
 
 # you can modify path here
 set -x PATH $PATH 
@@ -35,3 +36,26 @@ end
 function fk
   kak (fzf --height 50% --reverse)
 end
+
+bind \ck 'fk'
+
+# z.lua
+source (lua ~/source/z.lua/z.lua --init fish enhanced | psub)
+
+function __z.lua_most_recent
+  z -I -t .
+  clear
+  ls
+  commandline -f repaint
+end
+
+function __z.lua_subdirectory
+  z -I -c .
+  clear
+  ls
+  commandline -f repaint
+end
+
+bind \cf '__z.lua_most_recent'
+bind \cd '__z.lua_subdirectory'
+
