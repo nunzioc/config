@@ -4,11 +4,11 @@ abbr -a install sudo dnf install
 abbr -a search sudo dnf search
 abbr -a gf git fetch -p
 abbr -a gp git pull
-abbr -a gl git log --oneline --graph --decorate
+abbr -a gl git log --oneline --graph --decorate -n 15
 abbr -a gc git commit -m
 abbr -a gb git branch -a
 abbr -a ga git add . -v
-abbr -a gd git diff --histogram
+abbr -a gd git diff --histogram --color
 abbr -a gs git status
 
 # an alias for managing config files
@@ -21,7 +21,7 @@ alias config='/usr/bin/git --git-dir=$HOME/.configrepo/ --work-tree=$HOME'
 set fish_greeting
 
 # you can modify path here
-set -x PATH $PATH 
+set -x PATH $PATH ~/source/plan9port/bin/
 #
 # set length of prompt directories
 set -g fish_prompt_pwd_dir_length 3
