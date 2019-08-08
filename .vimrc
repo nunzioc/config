@@ -113,7 +113,6 @@ set relativenumber
 set number
 
 nnoremap <C-b> :bprevious<CR>
-nnoremap ; :
 imap jk <Esc>`^
 colorscheme desert
 nnoremap <CR> :noh<CR><CR>:<backspace>
