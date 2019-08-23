@@ -1,21 +1,7 @@
 " This is stolen from the example vimrc and uses some other things i found
 " online. I need to go through it to clean things up and make them more suited
 " to my taste.
-" 
-
-
-" Expand TABs to spaces
-set expandtab
-
-" Indents are 4 spaces
-set shiftwidth=4
-
-" width of a TAB is 4
-set tabstop=4
-
-" indents have width of 4
-set shiftwidth=4
-
+"
 " These settings come from the vimrc shipped with vim
 " Get the defaults that most users want.
 source $VIMRUNTIME/defaults.vim
@@ -28,6 +14,17 @@ augroup vimrcEx
   autocmd FileType text setlocal textwidth=78
 augroup END
 
+" Expand TABs to spaces
+set expandtab
+
+" Indents are 4 spaces
+set shiftwidth=4
+
+" width of a TAB is 4
+set tabstop=4
+
+" indents have width of 4
+set shiftwidth=4
 " Add optional packages.
 "
 " The matchit plugin makes the % command work better, but it is not backwards
@@ -116,7 +113,6 @@ set relativenumber
 set number
 
 nnoremap <C-b> :bprevious<CR>
-nnoremap ; :
 imap jk <Esc>`^
 colorscheme desert
 nnoremap <CR> :noh<CR><CR>:<backspace>
