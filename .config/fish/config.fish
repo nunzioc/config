@@ -24,7 +24,7 @@ alias config='/usr/bin/git --git-dir=$HOME/.configrepo/ --work-tree=$HOME'
 set fish_greeting
 
 # you can modify path here
-set -x PATH $PATH ~/source/plan9port/bin/
+set -x PATH /home/nunziocicone/.guix-profile/bin{$PATH:+:} $PATH ~/source/plan9port/bin/
 #
 # set length of prompt directories
 set -g fish_prompt_pwd_dir_length 3
