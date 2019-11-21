@@ -24,28 +24,15 @@ alias config='/usr/bin/git --git-dir=$HOME/.configrepo/ --work-tree=$HOME'
 set fish_greeting
 
 # you can modify path here
-set -x PATH /home/nunziocicone/.guix-profile/bin{$PATH:+:} $PATH ~/source/plan9port/bin/
+set -x PATH /home/nunziocicone/.guix-profile/bin $PATH ~/source/plan9port/bin/
 #
 # set length of prompt directories
-set -g fish_prompt_pwd_dir_length 3
+#set -g fish_prompt_pwd_dir_length
 
-# z.lua
-source (lua ~/source/z.lua/z.lua --init fish enhanced | psub)
+set -x GUILE_LOAD_PATH /home/nunziocicone/.guix-profile/lib/guile/2.2{GUILE_LOAD_PATH:+:}$GUILE_LOAD_PATH
 
-function __z.lua_most_recent
-  z -I -t .
-  clear
-  ls
-  commandline -f repaint
-end
+set -x GUILE_LOAD_COMPILED_PATH /home/nunziocicone/.guix-profile/lib/guile/2.2/site-ccache{GUILE_LOAD_COMPILED_PATH:+:}$GUILE_LOAD_COMPILED_PATH
 
-function __z.lua_subdirectory
-  z -I -c .
-  clear
-  ls
-  commandline -f repaint
-end
+set -x INFOPATH /home/nunziocicone/.guix-profile/share/info{INFOPATH:+:}$INFOPATH
 
-bind \cf '__z.lua_most_recent'
-bind \cd '__z.lua_subdirectory'
-
+export GUIX_LOCPATH=$HOME/.guix-profile/lib/locale
