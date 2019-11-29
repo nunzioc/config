@@ -36,3 +36,6 @@ set -x GUILE_LOAD_COMPILED_PATH /home/nunziocicone/.guix-profile/lib/guile/2.2/s
 set -x INFOPATH /home/nunziocicone/.guix-profile/share/info{INFOPATH:+:}$INFOPATH
 
 export GUIX_LOCPATH=$HOME/.guix-profile/lib/locale
+
+. /usr/share/autojump/autojump.fish
+
