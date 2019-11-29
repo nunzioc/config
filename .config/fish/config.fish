@@ -37,5 +37,9 @@ set -x INFOPATH /home/nunziocicone/.guix-profile/share/info{INFOPATH:+:}$INFOPAT
 
 export GUIX_LOCPATH=$HOME/.guix-profile/lib/locale
 
+# load autojump
 . /usr/share/autojump/autojump.fish
+
+# load kitty completions
+kitty + complete setup fish | source
 
