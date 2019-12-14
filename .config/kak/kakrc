@@ -16,3 +16,5 @@ map global user p '<a-!>wl-paste<ret>'
 
 # line numbers
 add-highlighter global/ number-lines -relative
+
+set-option global tabstop 4
