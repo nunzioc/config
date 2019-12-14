@@ -1,5 +1,6 @@
 #! /usr/bin/fish
 
+abbr -a k kak
 abbr -a install sudo dnf install
 abbr -a search sudo dnf search
 abbr -a remove sudo dnf remove
@@ -24,7 +25,7 @@ alias config='/usr/bin/git --git-dir=$HOME/.configrepo/ --work-tree=$HOME'
 set fish_greeting
 
 # you can modify path here
-set -x PATH /home/nunziocicone/.guix-profile/bin $PATH ~/source/plan9port/bin/
+set -x PATH /home/nunziocicone/.guix-profile/bin $PATH ~/source/plan9port/bin/ ~/source/kitty/kitty/launcher/
 #
 # set length of prompt directories
 #set -g fish_prompt_pwd_dir_length
