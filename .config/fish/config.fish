@@ -1,6 +1,6 @@
 #! /usr/bin/fish
 
-abbr k kak
+abbr -a k kak
 abbr -a install sudo dnf install
 abbr -a search sudo dnf search
 abbr -a remove sudo dnf remove
@@ -25,7 +25,7 @@ alias config='/usr/bin/git --git-dir=$HOME/.configrepo/ --work-tree=$HOME'
 set fish_greeting
 
 # you can modify path here
-set -x PATH /home/nunziocicone/.guix-profile/bin $PATH ~/source/plan9port/bin/
+set -x PATH /home/nunziocicone/.guix-profile/bin $PATH ~/source/plan9port/bin/ ~/source/kitty/kitty/launcher/
 
 # set length of prompt directories
 #set -g fish_prompt_pwd_dir_length
@@ -38,9 +38,6 @@ set -x INFOPATH /home/nunziocicone/.guix-profile/share/info{INFOPATH:+:}$INFOPAT
 
 export GUIX_LOCPATH=$HOME/.guix-profile/lib/locale
 
-# configure autojump
-. /usr/share/autojump/autojump.fish
-
 # use vi bindings with emacs bindings
 function hybrid_bindings --description "vi style bindings that inherit emacs bindings"
     for mode in default insert visual
@@ -52,3 +49,9 @@ set -g fish_key_bindings hybrid_bindings
 # disable vi mode prompt
 function fish_mode_prompt
 end
+
+# load autojump
+. /usr/share/autojump/autojump.fish
+
+# load kitty completions
+kitty + complete setup fish | source
