@@ -26,7 +26,7 @@ set fish_greeting
 
 # you can modify path here
 set -x PATH /home/nunziocicone/.guix-profile/bin $PATH ~/source/plan9port/bin/ ~/source/kitty/kitty/launcher/
-#
+
 # set length of prompt directories
 #set -g fish_prompt_pwd_dir_length
 
@@ -38,9 +38,20 @@ set -x INFOPATH /home/nunziocicone/.guix-profile/share/info{INFOPATH:+:}$INFOPAT
 
 export GUIX_LOCPATH=$HOME/.guix-profile/lib/locale
 
+# use vi bindings with emacs bindings
+function hybrid_bindings --description "vi style bindings that inherit emacs bindings"
+    for mode in default insert visual
+        fish_default_key_bindings -M $mode
+    end
+    fish_vi_key_bindings --no-erase
+end
+set -g fish_key_bindings hybrid_bindings
+# disable vi mode prompt
+function fish_mode_prompt
+end
+
 # load autojump
 . /usr/share/autojump/autojump.fish
 
 # load kitty completions
 kitty + complete setup fish | source
-
