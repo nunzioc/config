@@ -1,6 +1,9 @@
 # colorscheme
 colorscheme gruvbox
 
+# turn off ui ncurses_assistant
+set-option global ui_options ncurses_assistant=none
+
 # map jk to esc 
 hook global InsertChar k %{ try %{
     exec -draft hH <a-k>jk<ret> d
