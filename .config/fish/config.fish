@@ -1,6 +1,7 @@
 #! /usr/bin/fish
 
 abbr -a k kak
+abbr -a rm trash-cli
 abbr -a install sudo dnf install
 abbr -a search sudo dnf search
 abbr -a remove sudo dnf remove
