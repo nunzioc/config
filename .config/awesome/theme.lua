@@ -8,12 +8,12 @@ local themes_path = require("gears.filesystem").get_themes_dir()
 local dpi = require("beautiful.xresources").apply_dpi
 
 -- {{{ Main
-local theme = {}
-theme.wallpaper =  "~/.config/awesome/mountainwallpaper.png"
+local theme      = {}
+theme.wallpaper  =  "~/.config/awesome/mountainwallpaper.png"
 -- }}}
 
 -- {{{ Styles
-theme.font      = "Fira Code 8"
+theme.font       = "Fira Code 8"
 
 -- {{{ Colors
 theme.fg_normal  = "#DCDCCC"
@@ -26,11 +26,12 @@ theme.bg_systray = theme.bg_normal
 -- }}}
 
 -- {{{ Borders
-theme.useless_gap   = dpi(1)
-theme.border_width  = dpi(0)
-theme.border_normal = "#3F3F3F"
-theme.border_focus  = "#6F6F6F"
-theme.border_marked = "#CC9393"
+theme.useless_gap       = dpi(1)
+theme.gap_single_client = false
+theme.border_width      = dpi(0)
+theme.border_normal     = "#3F3F3F"
+theme.border_focus      = "#6F6F6F"
+theme.border_marked     = "#CC9393"
 -- }}}
 
 -- {{{ Titlebars
@@ -133,5 +134,3 @@ theme.titlebar_maximized_button_normal_inactive = themes_path .. "zenburn/titleb
 -- }}}
 
 return theme
-
--- vim: filetype=lua:expandtab:shiftwidth=4:tabstop=8:softtabstop=4:textwidth=80
