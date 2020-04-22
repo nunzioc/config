@@ -5,6 +5,7 @@ pcall(require, "luarocks.loader")
 -- Standard awesome library
 local gears = require("gears")
 local awful = require("awful")
+local lain = require("lain")
 require("awful.autofocus")
 -- Widget and layout library
 local wibox = require("wibox")
@@ -324,6 +325,12 @@ for i = 1, 9 do
     )
 end
 
+clientbuttons = gears.table.join(
+  awful.button({ }, 1, function (c)
+    c:emit_signal("request::activate", "mouse_click", {raise = true})
+  end)
+)
+
 -- Set keys
 root.keys(globalkeys)
 -- }}}
@@ -338,6 +345,7 @@ awful.rules.rules = {
                      focus = awful.client.focus.filter,
                      raise = true,
                      keys = clientkeys,
+                     buttons = clientbuttons,
                      screen = awful.screen.preferred,
                      placement = awful.placement.no_overlap+awful.placement.no_offscreen
      }
@@ -387,3 +395,4 @@ end)
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
+
