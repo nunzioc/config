@@ -1,6 +1,9 @@
 # colorscheme
 colorscheme gruvbox
 
+# don't display autocomplete by default
+set-option global autocomplete prompt
+
 # turn off ui ncurses_assistant
 set-option global ui_options ncurses_assistant=none
 

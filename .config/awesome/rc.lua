@@ -5,7 +5,6 @@ pcall(require, "luarocks.loader")
 -- Standard awesome library
 local gears = require("gears")
 local awful = require("awful")
-local lain = require("lain")
 require("awful.autofocus")
 -- Widget and layout library
 local wibox = require("wibox")
@@ -154,6 +153,16 @@ globalkeys = gears.table.join(
     awful.key({ modkey, }, "Escape", awful.tag.history.restore,               { description = "go back",                 group = "tag"     }),
     awful.key({ modkey, }, "j", function () awful.client.focus.byidx( 1) end, { description = "focus next by index",     group = "client"  }),
     awful.key({ modkey, }, "k", function () awful.client.focus.byidx(-1) end, { description = "focus previous by index", group = "client"  }),
+
+    -- custom keys
+    awful.key({ modkey, "Control" }, "l", function () awful.spawn.with_shell("i3lock -i ./mountainwallpaperblur.png") end,
+      { description = "lock the screen", group = "custom" }),
+    awful.key({ }, 'XF86AudioRaiseVolume', function () awful.spawn("amixer set Master 5%+") end,
+      { description = "raise volume", group="custom" }),
+    awful.key({ }, 'XF86AudioLowerVolume', function () awful.spawn("amixer set Master 5%-") end,
+      { description = "lower volume", group="custom" }),
+    awful.key({ }, 'XF86AudioMute', function () awful.spawn("amixer set Master toggle") end,
+      { description = "mute volume", group="custom" }),
 
     -- Layout manipulation
     awful.key({ modkey, "Shift"   }, "j", function () awful.client.swap.byidx(  1)    end,
