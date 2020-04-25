@@ -43,6 +43,9 @@ do
 end
 -- }}}
 
+-- compositor
+awful.spawn.with_shell('picom -b');
+
 -- lockscreen
 awful.spawn.with_shell('sh ~/.config/awesome/lockscript.sh');
 
