@@ -43,6 +43,9 @@ do
 end
 -- }}}
 
+-- lockscreen
+awful.spawn.with_shell('sh ~/.config/awesome/lockscript.sh');
+
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
 beautiful.init("~/.config/awesome/theme.lua")
@@ -98,6 +101,12 @@ end
 -- Re-set wallpaper when a screen's geometry changes (e.g. different resolution)
 screen.connect_signal("property::geometry", set_wallpaper)
 
+local batteryWidget = wibox.widget.textbox("hello")
+local batCommand = "acpi | awk '{ print $4 }'"
+awful.spawn.easy_async_with_shell(batCommand, function (out)
+  batteryWidget.text = out
+end)
+
 awful.screen.connect_for_each_screen(function(s)
     -- Wallpaper
     set_wallpaper(s)
@@ -138,6 +147,7 @@ awful.screen.connect_for_each_screen(function(s)
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
             wibox.widget.systray(),
+            batteryWidget,
             mytextclock,
             s.mylayoutbox,
         },
@@ -155,7 +165,8 @@ globalkeys = gears.table.join(
     awful.key({ modkey, }, "k", function () awful.client.focus.byidx(-1) end, { description = "focus previous by index", group = "client"  }),
 
     -- custom keys
-    awful.key({ modkey, "Control" }, "l", function () awful.spawn.with_shell("i3lock -i ./mountainwallpaperblur.png") end,
+    awful.key({ modkey, "Control" }, "l",
+      function () awful.spawn.with_shell("xautolock -locknow") end,
       { description = "lock the screen", group = "custom" }),
     awful.key({ }, 'XF86AudioRaiseVolume', function () awful.spawn("amixer set Master 5%+") end,
       { description = "raise volume", group="custom" }),
