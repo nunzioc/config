@@ -104,11 +104,20 @@ end
 -- Re-set wallpaper when a screen's geometry changes (e.g. different resolution)
 screen.connect_signal("property::geometry", set_wallpaper)
 
+-- show battery status
 local batteryWidget = wibox.widget.textbox("hello")
 local batCommand = "acpi | awk '{ print $4 }'"
-awful.spawn.easy_async_with_shell(batCommand, function (out)
-  batteryWidget.text = out
-end)
+
+gears.timer {
+  timeout = 30,
+  call_now = true,
+  autostart = true,
+  callback = function()
+    awful.spawn.easy_async_with_shell(batCommand, function (out)
+      batteryWidget.text = out
+    end)
+  end
+}
 
 awful.screen.connect_for_each_screen(function(s)
     -- Wallpaper
@@ -405,7 +414,7 @@ awful.rules.rules = {
 client.connect_signal("manage", function (c)
     -- Set the windows at the slave,
     -- i.e. put it at the end of others instead of setting it master.
-    -- if not awesome.startup then awful.client.setslave(c) end
+    if not awesome.startup then awful.client.setslave(c) end
 
     if awesome.startup
       and not c.size_hints.user_position
