@@ -1,18 +1,40 @@
 # colorscheme
 colorscheme gruvbox
 
+# don't display autocomplete by default
+set-option global autocomplete prompt
+
+# turn off ui ncurses_assistant
+set-option global ui_options ncurses_assistant=none
+
 # map jk to esc 
 hook global InsertChar k %{ try %{
-      exec -draft hH <a-k>jk<ret> d
-        exec <esc>
+    exec -draft hH <a-k>jk<ret> d
+    exec -with-hooks <esc>
 }}
 
 # System Copy and Paste on wayland
 hook global NormalKey y|d|c %{ nop %sh{
-  printf %s "$kak_main_reg_dquote" | wl-copy > /dev/null 2>&1 & 
+    printf %s "$kak_main_reg_dquote" | wl-copy > /dev/null 2>&1 & 
 }}
 map global user P '!wl-paste<ret>'
 map global user p '<a-!>wl-paste<ret>'
 
-# line numbers
-add-highlighter global/ number-lines -relative
+# line numbers - trying out no line numbers for now
+# add-highlighter global/ number-lines -relative
+
+# tab stuff
+set global indentwidth 4
+set global tabstop 4
+
+# change color during insert mode (only looks good works with gruvbox)
+hook global ModeChange push:.*:insert %{
+    set-face window PrimaryCursor rgb:ebdbb2,rgb:484848
+    set-face window PrimaryCursorEol rgb:ebdbb2,rgb:484848
+    set-face window PrimarySelection rgb:ebdbb2,rgb:323232
+}
+hook global ModeChange pop:insert:.* %{
+    unset-face window PrimaryCursor
+    unset-face window PrimaryCursorEol
+    unset-face window PrimarySelection
+}
