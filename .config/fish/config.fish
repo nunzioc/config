@@ -41,15 +41,6 @@ set -x INFOPATH /home/nunziocicone/.guix-profile/share/info{INFOPATH:+:}$INFOPAT
 
 export GUIX_LOCPATH=$HOME/.guix-profile/lib/locale
 
-function __z.lua_subdirectory
-  z -I -c .
-  clear
-  ls
-  commandline -f repaint
-end
-
-bind \cd '__z.lua_subdirectory'
-
 # use vi bindings with emacs bindings
 function hybrid_bindings --description "vi style bindings that inherit emacs bindings"
     for mode in default insert visual
@@ -62,10 +53,6 @@ set -g fish_key_bindings hybrid_bindings
 # disable vi mode prompt
 function fish_mode_prompt
 end
-
-# load autojump
-. /usr/share/autojump/autojump.fish
->>>>>>> 7c85d317ab5d41dbdd950432cc540a06202ed6f3
 
 # load kitty completions
 kitty + complete setup fish | source

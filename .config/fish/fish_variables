@@ -3,6 +3,7 @@
 SETUVAR __fish_init_2_39_8:\x1d
 SETUVAR __fish_init_2_3_0:\x1d
 SETUVAR __fish_init_3_x:\x1d
+SETUVAR __fish_initialized:3100
 SETUVAR _fish_abbr_ga:git\x20add\x20\x2e\x20\x2dv
 SETUVAR _fish_abbr_gb:git\x20branch\x20\x2da
 SETUVAR _fish_abbr_gc:git\x20commit\x20\x2dm
