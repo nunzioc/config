@@ -22,17 +22,13 @@ set fish_greeting
 
 # you can modify path here
 set -x PATH $PATH ~/source/plan9port/bin/
-#
+
+# plan9port stuff
+set -x PLAN9 ~/source/plan9port
 # set length of prompt directories
 set -g fish_prompt_pwd_dir_length 3
 
 # FZF
-function f
-  cd ~
-  cd (find -type d | fzf --height 50% --reverse)
-  ls
-end
-
 function fk
   kak (fzf --height 50% --reverse)
 end
@@ -42,13 +38,6 @@ bind \ck 'fk'
 # z.lua
 source (lua ~/source/z.lua/z.lua --init fish enhanced | psub)
 
-function __z.lua_most_recent
-  z -I -t .
-  clear
-  ls
-  commandline -f repaint
-end
-
 function __z.lua_subdirectory
   z -I -c .
   clear
@@ -56,6 +45,5 @@ function __z.lua_subdirectory
   commandline -f repaint
 end
 
-bind \cf '__z.lua_most_recent'
 bind \cd '__z.lua_subdirectory'
 
