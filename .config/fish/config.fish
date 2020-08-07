@@ -1,5 +1,6 @@
 #! /usr/bin/fish
 
+abbr -a j z
 abbr -a k kak
 abbr -a icat kitty +kitten icat
 abbr -a rm trash
