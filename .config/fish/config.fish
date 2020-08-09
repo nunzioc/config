@@ -1,5 +1,6 @@
 #! /usr/bin/fish
 
+abbr -a j z
 abbr -a k kak
 abbr -a icat kitty +kitten icat
 # abbr -a rm trash
@@ -51,13 +52,11 @@ function hybrid_bindings --description "vi style bindings that inherit emacs bin
     end
     fish_vi_key_bindings --no-erase
 end
+
 set -g fish_key_bindings hybrid_bindings
 # disable vi mode prompt
 function fish_mode_prompt
 end
-
-# load autojump
-# . /usr/share/autojump/autojump.fish
 
 # load kitty completions
 # kitty + complete setup fish | source

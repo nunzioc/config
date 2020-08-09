@@ -18,6 +18,7 @@ SETUVAR _fish_abbr_hello:echo\x20success
 SETUVAR _fish_abbr_i:sudo\x20dnf\x20install
 SETUVAR _fish_abbr_icat:kitty\x20\x2bkitten\x20icat
 SETUVAR _fish_abbr_install:sudo\x20dnf\x20install
+SETUVAR _fish_abbr_j:z
 SETUVAR _fish_abbr_k:kak
 SETUVAR _fish_abbr_remove:sudo\x20dnf\x20remove
 SETUVAR _fish_abbr_rm:rm
