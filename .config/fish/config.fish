@@ -2,7 +2,7 @@
 
 abbr -a k kak
 abbr -a icat kitty +kitten icat
-abbr -a rm trash
+# abbr -a rm trash
 abbr -a install sudo dnf install
 abbr -a search sudo dnf search
 abbr -a remove sudo dnf remove
@@ -17,17 +17,21 @@ abbr -a gd git diff --histogram --word-diff=color
 abbr -a gs git status
 abbr -a gr git rebase
 
+alias j='z'
+alias jb='z -b'
+alias ji='z -i'
+alias jd='z -' # restrict match to subdirs
 # an alias for managing config files
 # use:
 # config config --local status.showUntrackedFiles no
 # to avoid showing untracked files
-alias config='/usr/bin/git --git-dir=$HOME/.configrepo/ --work-tree=$HOME'
+alias config='/usr/local/bin/git --git-dir=$HOME/.configrepo/ --work-tree=$HOME'
 
 # turn off greeting message
 set fish_greeting
 
 # you can modify path here
-set -x PATH /home/nunziocicone/.guix-profile/bin $PATH ~/source/plan9port/bin/ ~/source/kitty/kitty/launcher/
+set -x PATH $HOME/.local/bin/ /home/nunziocicone/.guix-profile/bin $PATH ~/source/plan9port/bin/ ~/source/kitty/kitty/launcher/
 
 # set length of prompt directories
 #set -g fish_prompt_pwd_dir_length
@@ -53,7 +57,10 @@ function fish_mode_prompt
 end
 
 # load autojump
-. /usr/share/autojump/autojump.fish
+# . /usr/share/autojump/autojump.fish
 
 # load kitty completions
-kitty + complete setup fish | source
+# kitty + complete setup fish | source
+
+# opam configuration
+source /home/ncicone/.opam/opam-init/init.fish > /dev/null 2> /dev/null; or true
