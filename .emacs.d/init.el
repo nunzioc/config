@@ -21,4 +21,3 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
->>>>>>> 253b84df27e53be68b24821dc49f3a25414cbc91
