@@ -13,6 +13,9 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
+# Completion for kitty
+kitty + complete setup zsh | source /dev/stdin
+
 # initialize z.lua
 eval "$(lua $HOME/source/z.lua/z.lua --init zsh enhanced once)"
 export _ZL_ECHO=1
