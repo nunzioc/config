@@ -14,7 +14,8 @@ compinit
 # End of lines added by compinstall
 
 # initialize z.lua
-eval '$(lua $HOME/source/z.lua/z.lua zsh enhanced once)'
+eval '$(lua $HOME/source/z.lua/z.lua --init zsh enhanced once)'
+export _ZL_ECHO=1
 
 # Aliases:
 # manage config files
