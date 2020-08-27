@@ -1,5 +1,5 @@
 super + Return
-    urxvt
+    kitty --single-instance
 
 super + @space
     dmenu_run

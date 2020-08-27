@@ -22,13 +22,13 @@ export _ZL_ECHO=1
 alias config="/usr/bin/git --git-dir=$HOME/.configrepo/ --work-tree=$HOME"
 alias csync="config commit -am 'sync' && config push"
 
-# conveniance
 alias k="kak"
+alias i="sudo apt install"
+
 alias j="z"
 alias b="z -b"
 alias ji="j -i"
 
-# git
 alias gs="git status"
 alias gf="git fetch -p --tags"
 alias gp="git pull"
