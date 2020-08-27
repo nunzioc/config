@@ -25,6 +25,7 @@ alias csync='config commit -am "sync" && config push'
 alias k='kak'
 alias j='z'
 alias b='z -b'
+alias ji='j -i'
 
 # git
 alias gs='git status'
