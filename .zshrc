@@ -14,7 +14,7 @@ compinit
 # End of lines added by compinstall
 
 # prompt showing red error codes
-PROMPT='%(?..%F{red}%?%f)%#'
+PROMPT='%(?..%F{red}%?%f)%# '
 # Completion for kitty
 kitty + complete setup zsh | source /dev/stdin
 
