@@ -13,6 +13,9 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
+# initialize z.lua
+eval '$(lua $HOME/source/z.lua/z.lua zsh enhanced once)'
+
 # Aliases:
 # manage config files
 alias config='/usr/bin/git --git-dir=$HOME/.configrepo/ --work-tree=$HOME'
