@@ -54,7 +54,7 @@ awful.spawn.with_shell('sh ~/.config/awesome/lockscript.sh');
 beautiful.init("~/.config/awesome/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "kitty"
+terminal = "xterm"
 editor = os.getenv("EDITOR") or "vi"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -133,37 +133,37 @@ awful.screen.connect_for_each_screen(function(s)
     s.mylayoutbox = awful.widget.layoutbox(s)
 
     -- Create a taglist widget
-    s.mytaglist = awful.widget.taglist {
-        screen  = s,
-        filter  = awful.widget.taglist.filter.all,
-    }
+    -- s.mytaglist = awful.widget.taglist {
+        -- screen  = s,
+        -- filter  = awful.widget.taglist.filter.all,
+    -- }
 
     -- create a spacer to seperate tags and date
-    s.spacer = awful.widget.tasklist {
-        screen  = s,
-    }
+    -- s.spacer = awful.widget.tasklist {
+        -- -- screen  = s,
+    -- }
 
     -- Create the wibox
-    s.mywibox = awful.wibar({ position = "top", screen = s })
+    -- s.mywibox = awful.wibar({ position = "top", screen = s })
 
     -- Add widgets to the wibox
-    s.mywibox:setup {
-        layout = wibox.layout.align.horizontal,
-        { -- Left widgets
-            layout = wibox.layout.fixed.horizontal,
-            mylauncher,
-            s.mytaglist,
-            s.mypromptbox,
-        },
-        s.spacer, -- Middle widget
-        { -- Right widgets
-            layout = wibox.layout.fixed.horizontal,
-            wibox.widget.systray(),
-            batteryWidget,
-            mytextclock,
-            s.mylayoutbox,
-        },
-    }
+    -- s.mywibox:setup {
+        -- layout = wibox.layout.align.horizontal,
+        -- { -- Left widgets
+            -- layout = wibox.layout.fixed.horizontal,
+            -- mylauncher,
+            -- s.mytaglist,
+            -- s.mypromptbox,
+        -- },
+        -- s.spacer, -- Middle widget
+        -- { -- Right widgets
+            -- layout = wibox.layout.fixed.horizontal,
+            -- wibox.widget.systray(),
+            -- batteryWidget,
+            -- mytextclock,
+            -- s.mylayoutbox,
+        -- },
+    -- }
 end)
 -- }}}
 

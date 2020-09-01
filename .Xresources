@@ -33,7 +33,9 @@
 *.color7: #bfbaac
 *.color15: #fdf6e3
 
-*.font: xft:DejaVu Sans Mono
+emacs.font: DejaVu Sans Mono-12
+
+URxvt.font: xft:DejaVu Sans Mono
 URxvt.depth: 32
 URxvt.background: rgba:0000/0000/0200/e800
 URxvt.scrollBar: false
@@ -43,3 +45,6 @@ xterm*faceSize: 12
 xterm*ScrollBar: false
 xterm*scrollTtyOutput: false
 xterm*savelines: 16384
+xterm*VT100.Translations: #override \
+	Ctrl Shift <Key>V:	insert-selection(CLIPBOARD) \n\
+	Ctrl Shift <Key>C:	copy-selection(CLIPBOARD)
