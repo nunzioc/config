@@ -44,6 +44,7 @@ alias b="z -b"
 alias ji="z -i"
 
 alias gs="git status"
+alias gc="git commit"
 alias gf="git fetch -p --tags"
 alias gp="git pull"
 alias gb="git branch -a"
