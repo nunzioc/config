@@ -22,7 +22,6 @@ PROMPT='%(?..%F{red}%?%f)%# '
 kitty + complete setup zsh | source /dev/stdin
 
 # initialize z.lua
-eval "$(lua53 $HOME/source/z.lua/z.lua --init zsh enhanced once)"
 eval "$(lua $HOME/source/z.lua/z.lua --init zsh enhanced once)"
 export _ZL_ECHO=1
 
@@ -33,12 +32,13 @@ chpwd() {
 
 # Aliases:
 # manage config files
-alias config="/usr/local/bin/git --git-dir=$HOME/.configrepo/ --work-tree=$HOME"
+alias config="/usr/bin/git --git-dir=$HOME/.configrepo/ --work-tree=$HOME"
 alias csync="config commit -am 'sync' && config push"
 
 alias k="kak"
 alias ddg="ddgr -n 3"
 alias i="sudo apt install"
+alias xi="sudo xbps-install"
 
 alias j="z"
 alias b="z -b"
