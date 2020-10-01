@@ -33,7 +33,7 @@ chpwd() {
 # Aliases:
 # manage config files
 alias config="/usr/bin/git --git-dir=$HOME/.configrepo/ --work-tree=$HOME"
-alias csync="config commit -am 'sync' && config pull && config push"
+alias csync="config commit --allow-empty -am 'sync' && config pull && config push"
 
 alias k="kak"
 alias ddg="ddgr -n 3"
