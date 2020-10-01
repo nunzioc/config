@@ -13,12 +13,12 @@ hook global InsertChar k %{ try %{
     exec -with-hooks <esc>
 }}
 
-# System Copy and Paste on wayland
-hook global NormalKey y|d|c %{ nop %sh{
-    printf %s "$kak_main_reg_dquote" | wl-copy > /dev/null 2>&1 & 
+# System Copy and Paste
+hook global RegisterModified '"' %{ nop %sh{
+    printf %s "$kak_main_reg_dquote" | xsel --input --clipboard
 }}
-map global user P '!wl-paste<ret>'
-map global user p '<a-!>wl-paste<ret>'
+map global user P 'xsel --output --clipboard<ret>'
+map global user p '<a-!>xsel --output --clipboard<ret>'
 
 # line numbers - trying out no line numbers for now
 # add-highlighter global/ number-lines -relative
@@ -27,7 +27,7 @@ map global user p '<a-!>wl-paste<ret>'
 set global indentwidth 4
 set global tabstop 4
 
-# change color during insert mode (only looks good works with gruvbox)
+# change color during insert mode (only looks good with gruvbox)
 hook global ModeChange push:.*:insert %{
     set-face window PrimaryCursor rgb:ebdbb2,rgb:484848
     set-face window PrimaryCursorEol rgb:ebdbb2,rgb:484848
@@ -38,3 +38,13 @@ hook global ModeChange pop:insert:.* %{
     unset-face window PrimaryCursorEol
     unset-face window PrimarySelection
 }
+
+# dmenu
+define-command dmenu-buffers -docstring 'Select an open buffer using dmenu' %{ evaluate-commands %sh{
+      BUFFER=$(printf "%s\n" "${kak_buflist}" | tr " " "\n" | dmenu | tr -d \')
+      if [ -n "$BUFFER" ]; then
+          printf "%s\n" "buffer ${BUFFER}"
+      fi
+  }
+}
+map global user b dmenu-buffers

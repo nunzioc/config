@@ -51,3 +51,6 @@ alias gb="git branch -a"
 alias ga="git add . -v"
 alias gl="git log --oneline --graph --decorate -n 15"
 alias gd="git diff --histogram --word-diff=color"
+alias gco="git checkout"
+
+source /home/user/.config/broot/launcher/bash/br
