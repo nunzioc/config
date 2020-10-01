@@ -26,16 +26,21 @@ eval "$(lua $HOME/source/z.lua/z.lua --init zsh enhanced once)"
 export _ZL_ECHO=1
 
 # always ls after changing dir
-chpwd() {
-  ls
-}
+chpwd() { ls }
 
 # Aliases:
 # manage config files
 alias config="/usr/bin/git --git-dir=$HOME/.configrepo/ --work-tree=$HOME"
 alias csync="config commit --allow-empty -am 'sync' && config pull && config push"
 
-alias k="kak"
+function kak_single_instance() {
+    if kak -l | grep "main"; then
+        kak -c main $1
+	else
+     	kak -s main $1
+ 	fi
+}
+alias k="kak_single_instance"
 alias ddg="ddgr -n 3"
 alias i="sudo apt install"
 alias xi="sudo xbps-install"
