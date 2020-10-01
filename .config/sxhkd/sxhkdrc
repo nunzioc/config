@@ -1,5 +1,5 @@
 super + Return
-    kitty --single-instance
+    urxvtc
 
 super + m
     dmenu_run -c -i -l 5

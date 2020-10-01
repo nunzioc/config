@@ -1,13 +1,13 @@
 # Lines configured by zsh-newuser-install
-HISTFILE=~/.config/zsh/.histfile
+HISTFILE=.histfile
 HISTSIZE=10000
 SAVEHIST=10000
-setopt autocd extendedglob nomatch notify
-unsetopt beep
+setopt notify
+unsetopt autocd beep
 bindkey -e
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
-zstyle :compinstall filename "/home/user/.zshrc"
+zstyle :compinstall filename '$HOME/.zshrc'
 
 autoload -Uz compinit
 compinit
@@ -38,6 +38,7 @@ alias csync="config commit -am 'sync' && config push"
 alias k="kak"
 alias ddg="ddgr -n 3"
 alias i="sudo apt install"
+alias xi="sudo xbps-install"
 
 alias j="z"
 alias b="z -b"
