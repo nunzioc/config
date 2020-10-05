@@ -94,6 +94,11 @@ default_flags = ""
 #   so that you may jump directly at the right line from a preview.
 # Example:
 #  execution = "/usr/bin/nvim +{line} {file}"
+[[verbs]]
+invocation = "kak_main"
+shortcut = "k"
+execution = "kak -c main {file}"
+leave_broot = false
 
 [[verbs]]
 invocation = "edit"
@@ -134,20 +139,18 @@ leave_broot = false
 # leave_broot = false
 
 # Here's an example of a shorctut bringing you to your home directory
-# [[verbs]]
-# invocation = "home"
-# key = "ctrl-home"
-# execution = ":focus ~"
+[[verbs]]
+invocation = "home"
+key = "ctrl-home"
+execution = ":focus ~"
 
-# A popular set of shorctuts for going up and down:
-#
-# [[verbs]]
-# key = "ctrl-j"
-# execution = ":line_down"
-#
-# [[verbs]]
-# key = "ctrl-k"
-# execution = ":line_up"
+[[verbs]]
+key = "ctrl-n"
+execution = ":line_down"
+
+[[verbs]]
+key = "ctrl-p"
+execution = ":line_up"
 #
 # [[verbs]]
 # key = "ctrl-d"
