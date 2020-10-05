@@ -7,18 +7,17 @@ set-option global autocomplete prompt
 # turn off ui ncurses_assistant
 set-option global ui_options ncurses_assistant=none
 
-# map jk to esc 
-# hook global InsertChar k %{ try %{
-#     exec -draft hH <a-k>jk<ret> d
-#     exec -with-hooks <esc>
-# }}
-
 # System Copy and Paste
 hook global RegisterModified '"' %{ nop %sh{
     printf %s "$kak_main_reg_dquote" | xsel --input --clipboard
 }}
-map global user P 'xsel --output --clipboard<ret>'
+map global user P 'xsel --output --clipboard<ret>' -docstring 'paste'
 map global user p '<a-!>xsel --output --clipboard<ret>'
+
+# write/quit convenience
+map global user q ':wq<ret>' -docstring 'write and quit' 
+map global user Q ':w<ret>:db<ret>:q<ret>' -docstring 'delete buffer and quit'
+map global user w ':wa<ret>' -docstring 'write all'
 
 # line numbers 
 # add-highlighter global/ number-lines -relative
@@ -38,13 +37,3 @@ hook global ModeChange pop:insert:.* %{
     unset-face window PrimaryCursorEol
     unset-face window PrimarySelection
 }
-
-# dmenu
-define-command dmenu-buffers -docstring 'Select an open buffer using dmenu' %{ evaluate-commands %sh{
-      BUFFER=$(printf "%s\n" "${kak_buflist}" | tr " " "\n" | dmenu | tr -d \')
-      if [ -n "$BUFFER" ]; then
-          printf "%s\n" "buffer ${BUFFER}"
-      fi
-  }
-}
-map global user b dmenu-buffers
