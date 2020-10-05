@@ -33,14 +33,7 @@ chpwd() { ls }
 alias config="/usr/bin/git --git-dir=$HOME/.configrepo/ --work-tree=$HOME"
 alias csync="config commit --allow-empty -am 'sync' && config pull && config push"
 
-function kak_single_instance() {
-    if kak -l | grep "main"; then
-        kak -c main $1
-	else
-     	kak -s main $1
- 	fi
-}
-alias k="kak_single_instance"
+alias k="kak -c main"
 alias ddg="ddgr -n 3"
 alias i="sudo apt install"
 alias xi="sudo xbps-install"
@@ -59,4 +52,4 @@ alias gl="git log --oneline --graph --decorate -n 15"
 alias gd="git diff --histogram --word-diff=color"
 alias gco="git checkout"
 
-source /home/user/.config/broot/launcher/bash/br
+source $HOME/.config/broot/launcher/bash/br
