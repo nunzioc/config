@@ -3,9 +3,17 @@ colorscheme gruvbox
 
 # don't display autocomplete by default
 set-option global autocomplete prompt
+set-option global completers filename
 
 # turn off ui ncurses_assistant
 set-option global ui_options ncurses_assistant=none
+
+set-option global grepcmd 'ag --column'
+map global user f ':grep<ret>' -docstring 'find sel'
+map global user F ':grep ' -docstring 'find'
+map global user c ':comment-line<ret>' -docstring 'comment line'
+map global user t ':ctags-search<ret>' -docstring 'ctags search sel'
+map global user T ':ctags-search ' -docstring 'ctags search'
 
 # System Copy and Paste
 hook global RegisterModified '"' %{ nop %sh{
@@ -20,7 +28,7 @@ map global user Q ':w<ret>:db<ret>:q<ret>' -docstring 'delete buffer and quit'
 map global user w ':wa<ret>' -docstring 'write all'
 
 # line numbers 
-# add-highlighter global/ number-lines -relative
+# add-highlighter global/ number-lines 
 
 # tab stuff
 set global indentwidth 4
@@ -37,3 +45,12 @@ hook global ModeChange pop:insert:.* %{
     unset-face window PrimaryCursorEol
     unset-face window PrimarySelection
 }
+
+# lsp
+eval %sh{kak-lsp --kakoune -s $kak_session}
+hook global WinSetOption filetype=() %{
+    lsp-enable-window
+}
+# configure python lsp
+set-option global lsp_server_configuration pyls.configurationSources=["flake8"]
+set global lsp_cmd "kak-lsp -s %val{session} -vvv --log /tmp/kak-lsp.log"
