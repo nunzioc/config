@@ -14,6 +14,7 @@ map global user F ':grep ' -docstring 'find'
 map global user c ':comment-line<ret>' -docstring 'comment line'
 map global user t ':ctags-search<ret>' -docstring 'ctags search sel'
 map global user T ':ctags-search ' -docstring 'ctags search'
+map global normal q ':b ' -docstring 'buffers'
 
 # System Copy and Paste
 hook global RegisterModified '"' %{ nop %sh{
@@ -28,7 +29,15 @@ map global user Q ':w<ret>:db<ret>:q<ret>' -docstring 'delete buffer and quit'
 map global user w ':wa<ret>' -docstring 'write all'
 
 # line numbers 
-# add-highlighter global/ number-lines 
+map global user n ':add-highlighter global/ number-lines<ret>' -docstring 'add line numbers'
+map global user N ':remove-highlighter global/number-lines<ret>' -docstring 'remove line numbers'
+
+# snippets
+declare-user-mode snippets
+map global normal <space> ':enter-user-mode snippets<ret>'
+hook global WinSetOption filetype=(python) %{
+	map global snippets b 'obreakpoint()<esc>' -docstring 'breakpoint()'
+}
 
 # tab stuff
 set global indentwidth 4
