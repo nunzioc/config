@@ -102,7 +102,6 @@ leave_broot = false
 
 [[verbs]]
 invocation = "edit"
-key = "F2"
 shortcut = "e"
 execution = "$EDITOR {file}"
 leave_broot = false
@@ -138,12 +137,6 @@ leave_broot = false
 # set_working_dir = true
 # leave_broot = false
 
-# Here's an example of a shorctut bringing you to your home directory
-[[verbs]]
-invocation = "home"
-key = "ctrl-home"
-execution = ":focus ~"
-
 [[verbs]]
 key = "ctrl-n"
 execution = ":line_down"
@@ -151,6 +144,14 @@ execution = ":line_down"
 [[verbs]]
 key = "ctrl-p"
 execution = ":line_up"
+
+[[verbs]]
+key = "ctrl-b"
+execution = ":parent"
+
+[[verbs]]
+key = "ctrl-f"
+execution = ":open_stay"
 #
 # [[verbs]]
 # key = "ctrl-d"
