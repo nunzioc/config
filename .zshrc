@@ -35,8 +35,8 @@ alias csync="config commit --allow-empty -am 'sync' && config pull && config pus
 
 alias k="kak -c main"
 alias ddg="ddgr -n 3"
-alias i="sudo apt install"
-alias xi="sudo xbps-install"
+alias i="sudo apt install 2> /dev/null || sudo dnf install"
+alias s="sudo apt search 2> /dev/null || sudo dnf search"
 
 alias j="z"
 alias b="z -b"
@@ -53,3 +53,5 @@ alias gd="git diff --histogram --word-diff=color"
 alias gco="git checkout"
 
 source $HOME/.config/broot/launcher/bash/br
+
+source /home/nunziocicone/.config/broot/launcher/bash/br
