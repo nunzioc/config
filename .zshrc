@@ -33,10 +33,23 @@ chpwd() { ls }
 alias config="/usr/bin/git --git-dir=$HOME/.configrepo/ --work-tree=$HOME"
 alias csync="config commit --allow-empty -am 'sync' && config pull && config push"
 
+[ -e .zshalias ] && source .zshalias
+
 alias k="kak -c main"
-alias ddg="ddgr -n 3"
-alias i="sudo apt install 2> /dev/null || sudo dnf install"
-alias s="sudo apt search 2> /dev/null || sudo dnf search"
+alias py="python"
+
+os=$(lsb_release -d)
+case $os in
+    *Ubntu*)
+        alias s="sudo apt search"
+        alias i="sudo apt install" ;;
+    *Fedora*)
+        alias s="sudo dnf search"
+        alias i="sudo dnf install" ;;
+    *)
+        alias s="echo 'Error: No search alias for this OS'"
+        alias i="echo 'Error: No install alias for this OS'" ;;
+esac
 
 alias j="z"
 alias b="z -b"
@@ -47,11 +60,11 @@ alias gc="git commit"
 alias gf="git fetch -p --tags"
 alias gp="git pull"
 alias gb="git branch -a"
+alias gr="git rebase"
+alias grcon="git rebase --continue"
 alias ga="git add . -v"
 alias gl="git log --oneline --graph --decorate -n 15"
 alias gd="git diff --histogram --word-diff=color"
 alias gco="git checkout"
 
 source $HOME/.config/broot/launcher/bash/br
-
-source /home/nunziocicone/.config/broot/launcher/bash/br
