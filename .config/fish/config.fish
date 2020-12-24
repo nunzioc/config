@@ -1,6 +1,5 @@
 #! /usr/bin/fish
 
-abbr -a j z
 abbr -a k kak -c main
 abbr -a icat kitty +kitten icat
 abbr -a install sudo dnf install
@@ -21,11 +20,6 @@ alias j='z'
 alias jb='z -b'
 alias ji='z -i'
 alias jd='z -' # restrict match to subdirs
-# an alias for managing config files
-# use:
-# config config --local status.showUntrackedFiles no
-# to avoid showing untracked files
-alias config='/usr/local/bin/git --git-dir=$HOME/.configrepo/ --work-tree=$HOME'
 
 # turn off greeting message
 set fish_greeting
@@ -56,9 +50,6 @@ set -g fish_key_bindings hybrid_bindings
 # disable vi mode prompt
 function fish_mode_prompt
 end
-
-# load kitty completions
-# kitty + complete setup fish | source
 
 # opam configuration
 source /home/ncicone/.opam/opam-init/init.fish > /dev/null 2> /dev/null; or true
