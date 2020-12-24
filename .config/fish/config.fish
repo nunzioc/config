@@ -1,9 +1,8 @@
 #! /usr/bin/fish
 
 abbr -a j z
-abbr -a k kak
+abbr -a k kak -c main
 abbr -a icat kitty +kitten icat
-# abbr -a rm trash
 abbr -a install sudo dnf install
 abbr -a search sudo dnf search
 abbr -a remove sudo dnf remove
