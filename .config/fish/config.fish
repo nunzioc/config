@@ -21,6 +21,11 @@ alias jd='z -' # restrict match to subdirs
 # turn off greeting message
 set fish_greeting
 
+# run ls whenever the path changes
+function list_dir --on-variable PWD
+    ls -F -x --color=always | head -n 2
+end
+
 # you can modify path here
 set -x PATH $HOME/.local/bin/ /home/nunziocicone/.guix-profile/bin $PATH ~/source/plan9port/bin/ ~/source/kitty/kitty/launcher/
 
