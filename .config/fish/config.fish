@@ -1,20 +1,17 @@
 #! /usr/bin/fish
 
-abbr -a k kak -c main
-abbr -a icat kitty +kitten icat
-abbr -a install sudo dnf install
-abbr -a search sudo dnf search
-abbr -a remove sudo dnf remove
-abbr -a uninstall sudo dnf remove
-abbr -a gf git fetch -p --tags
-abbr -a gp git pull
-abbr -a gl git log --oneline --graph --decorate -n 15
-abbr -a gc git commit -m
-abbr -a gb git branch -a
-abbr -a ga git add . -v
-abbr -a gd git diff --histogram --word-diff=color
-abbr -a gs git status
-abbr -a gr git rebase
+abbr -a -g k kak -c main
+abbr -a -g py python
+abbr -a -g icat kitty +kitten icat
+abbr -a -g gf git fetch -p --tags
+abbr -a -g gp git pull
+abbr -a -g gl git log --oneline --graph --decorate -n 15
+abbr -a -g gc git commit -m
+abbr -a -g gb git branch -a
+abbr -a -g ga git add . -v
+abbr -a -g gd git diff --histogram --word-diff=color
+abbr -a -g gs git status
+abbr -a -g gr git rebase
 
 alias j='z'
 alias jb='z -b'
