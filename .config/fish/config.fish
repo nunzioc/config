@@ -12,18 +12,28 @@ abbr -a -g ga git add . -v
 abbr -a -g gd git diff --histogram --word-diff=color
 abbr -a -g gs git status
 abbr -a -g gr git rebase
+abbr -a -g gco git checkout
 
 alias j='z'
 alias jb='z -b'
 alias ji='z -i'
 alias jd='z -' # restrict match to subdirs
 
+switch (lsb_release -d)
+    case "*Ubuntu*"
+        abbr -a -g i sudo apt install
+    case "*Fedora*"
+        abbr -a -g i sudo dnf install
+end
+
 # turn off greeting message
 set fish_greeting
 
+set -xg EDITOR kak
+
 # run ls whenever the path changes
 function list_dir --on-variable PWD
-    ls -F -x --color=always | head -n 2
+    ls -F -x --color=always | head -n 3
 end
 
 # you can modify path here
