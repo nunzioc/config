@@ -1,8 +1,8 @@
 #! /usr/bin/fish
 
-abbr -a j z
-abbr -a k kak
+abbr -a k kak -c main
 abbr -a icat kitty +kitten icat
+abbr -a ru ruplacer
 # abbr -a rm trash
 abbr -a install sudo dnf install
 abbr -a search sudo dnf search
@@ -17,11 +17,12 @@ abbr -a ga git add . -v
 abbr -a gd git diff --histogram --word-diff=color
 abbr -a gs git status
 abbr -a gr git rebase
+abbr -a gco git checkout
 
 alias j='z'
 alias jb='z -b'
 alias ji='z -i'
-alias jd='z -' # restrict match to subdirs
+alias jd='z -c' # restrict match to subdirs
 # an alias for managing config files
 # use:
 # config config --local status.showUntrackedFiles no
