@@ -2,6 +2,7 @@
 
 abbr -a -g k kak -c main
 abbr -a -g py python
+abbr -a ru ruplacer
 abbr -a -g icat kitty +kitten icat
 abbr -a -g gf git fetch -p --tags
 abbr -a -g gp git pull
@@ -17,7 +18,12 @@ abbr -a -g gco git checkout
 alias j='z'
 alias jb='z -b'
 alias ji='z -i'
-alias jd='z -' # restrict match to subdirs
+alias jd='z -c' # restrict match to subdirs
+# an alias for managing config files
+# use:
+# config config --local status.showUntrackedFiles no
+# to avoid showing untracked files
+alias config='/usr/local/bin/git --git-dir=$HOME/.configrepo/ --work-tree=$HOME'
 
 switch (lsb_release -d)
     case "*Ubuntu*"
