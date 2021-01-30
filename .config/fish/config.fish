@@ -33,7 +33,9 @@ set -xg EDITOR kak
 
 # run ls whenever the path changes
 function list_dir --on-variable PWD
-    ls -F -x --color=always | head -n 3
+    if test (ls | wc -l) -lt 20
+       ls
+    end
 end
 
 # you can modify path here
