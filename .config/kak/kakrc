@@ -27,9 +27,10 @@ map global user P 'xsel --output --clipboard<ret>' -docstring 'paste'
 map global user p '<a-!>xsel --output --clipboard<ret>'
 
 # write/quit convenience
-map global user q ':wq<ret>' -docstring 'write and quit' 
-map global user Q ':w<ret>:db<ret>:q<ret>' -docstring 'delete buffer and quit'
-map global user w ':wa<ret>' -docstring 'write all'
+# experiment not using these
+# map global user q ':wq<ret>' -docstring 'write and quit' 
+# map global user Q ':w<ret>:db<ret>:q<ret>' -docstring 'delete buffer and quit'
+# map global user w ':wa<ret>' -docstring 'write all'
 
 # line numbers 
 map global user n ':add-highlighter global/ number-lines<ret>' -docstring 'add line numbers'
