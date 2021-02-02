@@ -23,7 +23,7 @@ alias jd='z -c' # restrict match to subdirs
 # use:
 # config config --local status.showUntrackedFiles no
 # to avoid showing untracked files
-alias config='/usr/local/bin/git --git-dir=$HOME/.configrepo/ --work-tree=$HOME'
+# alias config='/usr/local/bin/git --git-dir=$HOME/.configrepo/ --work-tree=$HOME'
 
 switch (lsb_release -d)
     case "*Ubuntu*"
