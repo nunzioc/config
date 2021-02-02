@@ -15,9 +15,6 @@ map global user t ':ctags-search<ret>' -docstring 'ctags search sel'
 map global user T ':ctags-search ' -docstring 'ctags search'
 map global normal q ':b ' -docstring 'buffers'
 
-# switch ; and :
-map global normal ';' ':' -docstring 'switch ;'
-map global normal ':' ';' -docstring 'switch :'
 
 # System Copy and Paste
 hook global RegisterModified '"' %{ nop %sh{
@@ -62,12 +59,12 @@ set global tabstop 4
 
 # lsp
 eval %sh{kak-lsp --kakoune -s $kak_session}
-hook global WinSetOption filetype=() %{
+hook global WinSetOption filetype=(python) %{
     lsp-enable-window
 }
 # configure python lsp
 set-option global lsp_server_configuration pyls.configurationSources=["flake8"]
-set global lsp_cmd "kak-lsp -s %val{session} -vvv --log /tmp/kak-lsp.log"
+# set global lsp_cmd "kak-lsp -s %val{session} -vvv --log /tmp/kak-lsp.log"
 
 # connect
 # require-module connect
@@ -78,3 +75,6 @@ hook global ModuleLoaded kitty %{
   alias global popup kitty-terminal-tab # or kitty-terminal
 }
 
+# switch ; and :
+map global normal ';' ':' -docstring 'switch ;'
+map global normal ':' ';' -docstring 'switch :'
