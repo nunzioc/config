@@ -1,6 +1,5 @@
 #! /usr/bin/fish
 
-abbr -a -g k kak -c main
 abbr -a -g py python
 abbr -a ru ruplacer
 abbr -a -g icat kitty +kitten icat
@@ -19,11 +18,6 @@ alias j='z'
 alias jb='z -b'
 alias ji='z -i'
 alias jd='z -c' # restrict match to subdirs
-# an alias for managing config files
-# use:
-# config config --local status.showUntrackedFiles no
-# to avoid showing untracked files
-# alias config='/usr/local/bin/git --git-dir=$HOME/.configrepo/ --work-tree=$HOME'
 
 switch (lsb_release -d)
     case "*Ubuntu*"
@@ -39,7 +33,9 @@ set -xg EDITOR kak
 
 # run ls whenever the path changes
 function list_dir --on-variable PWD
-    ls -F -x --color=always | head -n 3
+    if test (ls | wc -l) -lt 20
+       ls
+    end
 end
 
 # you can modify path here

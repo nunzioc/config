@@ -15,6 +15,10 @@ map global user t ':ctags-search<ret>' -docstring 'ctags search sel'
 map global user T ':ctags-search ' -docstring 'ctags search'
 map global normal q ':b ' -docstring 'buffers'
 
+# switch ; and :
+map global normal ';' ':' -docstring 'switch ;'
+map global normal ':' ';' -docstring 'switch :'
+
 # System Copy and Paste
 hook global RegisterModified '"' %{ nop %sh{
     printf %s "$kak_main_reg_dquote" | xsel --input --clipboard
@@ -23,9 +27,10 @@ map global user P 'xsel --output --clipboard<ret>' -docstring 'paste'
 map global user p '<a-!>xsel --output --clipboard<ret>'
 
 # write/quit convenience
-map global user q ':wq<ret>' -docstring 'write and quit' 
-map global user Q ':w<ret>:db<ret>:q<ret>' -docstring 'delete buffer and quit'
-map global user w ':wa<ret>' -docstring 'write all'
+# experiment not using these
+# map global user q ':wq<ret>' -docstring 'write and quit' 
+# map global user Q ':w<ret>:db<ret>:q<ret>' -docstring 'delete buffer and quit'
+# map global user w ':wa<ret>' -docstring 'write all'
 
 # line numbers 
 map global user n ':add-highlighter global/ number-lines<ret>' -docstring 'add line numbers'
@@ -65,10 +70,11 @@ set-option global lsp_server_configuration pyls.configurationSources=["flake8"]
 set global lsp_cmd "kak-lsp -s %val{session} -vvv --log /tmp/kak-lsp.log"
 
 # connect
-require-module connect
-require-module connect-fzf
+# require-module connect
+# require-module connect-fzf
 
 
 hook global ModuleLoaded kitty %{
   alias global popup kitty-terminal-tab # or kitty-terminal
 }
+
