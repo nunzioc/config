@@ -44,14 +44,6 @@ set -x PATH $HOME/.local/bin/ /home/nunziocicone/.guix-profile/bin $PATH ~/sourc
 # set length of prompt directories
 #set -g fish_prompt_pwd_dir_length
 
-set -x GUILE_LOAD_PATH /home/nunziocicone/.guix-profile/lib/guile/2.2{GUILE_LOAD_PATH:+:}$GUILE_LOAD_PATH
-
-set -x GUILE_LOAD_COMPILED_PATH /home/nunziocicone/.guix-profile/lib/guile/2.2/site-ccache{GUILE_LOAD_COMPILED_PATH:+:}$GUILE_LOAD_COMPILED_PATH
-
-set -x INFOPATH /home/nunziocicone/.guix-profile/share/info{INFOPATH:+:}$INFOPATH
-
-export GUIX_LOCPATH=$HOME/.guix-profile/lib/locale
-
 # use vi bindings with emacs bindings
 function hybrid_bindings --description "vi style bindings that inherit emacs bindings"
     for mode in default insert visual
