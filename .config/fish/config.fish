@@ -18,6 +18,8 @@ alias j='z'
 alias jb='z -b'
 alias ji='z -i'
 alias jd='z -c' # restrict match to subdirs
+alias '...'='cd ../.. && pwd'
+alias '....'='cd ../../.. && pwd'
 
 switch (lsb_release -d)
     case "*Ubuntu*"
