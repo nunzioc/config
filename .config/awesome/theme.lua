@@ -3,16 +3,18 @@
 --    modified by Nunzio C.  --
 -------------------------------
 
+local themes_path = require("gears.filesystem").get_themes_dir()
 local dpi = require("beautiful.xresources").apply_dpi
 
 -- Main
-local theme      = 
+local theme      = {}
 theme.wallpaper  =  "~/.config/awesome/mountainwallpaper.png"
 
 theme.font       = "Fira Code 8"
 
 -- Colors
 theme.fg_normal  = "#DCDCCC"
+theme.fg_focus   = "#F0DFAF"
 theme.fg_urgent  = "#CC9393"
 theme.bg_normal  = "#3F3F3F"
 theme.bg_focus   = "#1E2320"
