@@ -163,7 +163,7 @@ bindsym XF86AudioMute exec amixer set Master toggle
 
 default_border pixel
 gaps inner 2
-smart_gaps on
+# smart_gaps on
 smart_borders on
 
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
