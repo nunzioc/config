@@ -168,6 +168,8 @@ globalkeys = gears.table.join(
       { description = "lower volume", group="custom" }),
     awful.key({ }, 'XF86AudioMute', function () awful.spawn("amixer set Master toggle") end,
       { description = "mute volume", group="custom" }),
+    awful.key({ modkey }, 'c', function () awful.spawn.with_shell("env CM_LAUNCHER=rofi clipmenu") end,
+      { description = "Launch clipboard manager", group="custom" }),
 
     -- Layout manipulation
     awful.key({ modkey, "Shift"   }, "j", function () awful.client.swap.byidx(  1)    end,
@@ -402,6 +404,3 @@ client.connect_signal("manage", function (c)
         awful.placement.no_offscreen(c)
     end
 end)
-
-client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
-client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
