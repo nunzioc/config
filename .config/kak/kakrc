@@ -1,5 +1,5 @@
 # colorscheme
-colorscheme mystical-tutor
+colorscheme nord
 
 # don't display autocomplete by default
 set-option global autocomplete prompt
@@ -61,7 +61,9 @@ set global tabstop 4
 eval %sh{kak-lsp --kakoune -s $kak_session}
 hook global WinSetOption filetype=(python) %{
     lsp-enable-window
+    map global user s ': lsp-hover<ret>' -docstring 'show lsp hover info'
 }
+
 # configure python lsp
 set-option global lsp_server_configuration pyls.configurationSources=["flake8"]
 # set global lsp_cmd "kak-lsp -s %val{session} -vvv --log /tmp/kak-lsp.log"
