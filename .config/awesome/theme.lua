@@ -1,5 +1,6 @@
 -------------------------------
 --  "Zenburn" awesome theme  --
+--    By Adrian C. (anrxc)   --
 --    modified by Nunzio C.  --
 -------------------------------
 
@@ -9,7 +10,6 @@ local dpi = require("beautiful.xresources").apply_dpi
 -- Main
 local theme      = {}
 theme.wallpaper  =  "~/.config/awesome/mountainwallpaper.png"
-
 theme.font       = "Fira Code 8"
 
 -- Colors
@@ -18,6 +18,7 @@ theme.fg_focus   = "#F0DFAF"
 theme.fg_urgent  = "#CC9393"
 theme.bg_normal  = "#3F3F3F"
 theme.bg_focus   = "#1E2320"
+theme.bg_urgent  = "#3F3F3F"
 theme.bg_systray = theme.bg_normal
 
 -- Borders
@@ -35,6 +36,7 @@ theme.titlebar_bg_normal = "#3F3F3F"
 -- There are other variable sets
 -- overriding the default one when
 -- defined, the sets are:
+-- [taglist|tasklist]_[bg|fg]_[focus|urgent|occupied|empty|volatile]
 -- titlebar_[normal|focus]
 -- tooltip_[font|opacity|fg_color|bg_color|border_width|border_color]
 -- Example:
@@ -61,12 +63,11 @@ theme.mouse_finder_color = "#CC9393"
 theme.menu_height = dpi(15)
 theme.menu_width  = dpi(100)
 
--- Taglist
+-- Icons
 theme.taglist_squares_sel   = themes_path .. "zenburn/taglist/squarefz.png"
 theme.taglist_squares_unsel = themes_path .. "zenburn/taglist/squarez.png"
 --theme.taglist_squares_resize = "false"
 
--- Misc
 theme.awesome_icon           = themes_path .. "zenburn/awesome-icon.png"
 theme.menu_submenu_icon      = themes_path .. "default/submenu.png"
 
