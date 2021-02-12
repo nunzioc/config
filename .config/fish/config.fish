@@ -39,7 +39,7 @@ function list_dir --on-variable PWD
 end
 
 # you can modify path here
-set -x PATH $HOME/.local/bin/ /home/nunziocicone/.guix-profile/bin $PATH ~/source/plan9port/bin/ ~/source/kitty/kitty/launcher/
+# set -x PATH $HOME/.local/bin/ ~/source/kitty/kitty/launcher/
 
 # set length of prompt directories
 #set -g fish_prompt_pwd_dir_length
