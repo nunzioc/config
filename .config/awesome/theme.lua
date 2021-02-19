@@ -22,7 +22,7 @@ theme.bg_urgent  = "#3F3F3F"
 theme.bg_systray = theme.bg_normal
 
 -- Borders
-theme.useless_gap       = dpi(1)
+theme.useless_gap       = dpi(2)
 theme.gap_single_client = true
 theme.border_width      = dpi(0)
 theme.border_normal     = "#3F3F3F"
