@@ -385,14 +385,20 @@ awful.rules.rules = {
           "pop-up",       -- e.g. Google Chrome's (detached) Developer Tools.
         }
       }, properties = { floating = true }},
-
-    -- Set Firefox to always map on the tag named "2" on screen 1.
-    -- { rule = { class = "Firefox" },
-    --   properties = { screen = 1, tag = "2" } },
 }
 
 -- Signal function to execute when a new client appears.
 client.connect_signal("manage", function (c)
+    if (#c.screen.clients == 1 and c.class == "kitty") then
+        c.screen.padding = {
+            left = 80,
+            right = 80,
+            top = 0,
+            bottom = 0,
+        }
+    else
+        c.screen.padding = 0
+    end
     -- Set the windows at the slave,
     -- i.e. put it at the end of others instead of setting it master.
     if not awesome.startup then awful.client.setslave(c) end
@@ -402,5 +408,31 @@ client.connect_signal("manage", function (c)
       and not c.size_hints.program_position then
         -- Prevent clients from being unreachable after screen count changes.
         awful.placement.no_offscreen(c)
+    end
+end)
+
+client.connect_signal("unmanage", function (c)
+    if (#c.screen.clients == 1 and c.class == "kitty") then
+        c.screen.padding = {
+            left = 80,
+            right = 80,
+            top = 0,
+            bottom = 0,
+        }
+    else
+        c.screen.padding = 0
+    end
+end)
+
+client.connect_signal("focus", function (c)
+    if (#c.screen.clients == 1 and c.class == "kitty") then
+        c.screen.padding = {
+            left = 80,
+            right = 80,
+            top = 0,
+            bottom = 0,
+        }
+    else
+        c.screen.padding = 0
     end
 end)
