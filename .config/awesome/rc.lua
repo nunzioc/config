@@ -97,7 +97,7 @@ local batteryWidget = wibox.widget.textbox("hello")
 local batCommand = "acpi | awk '{ print $4 }'"
 
 gears.timer {
-  timeout = 30,
+  timeout = 3,
   call_now = true,
   autostart = true,
   callback = function()
