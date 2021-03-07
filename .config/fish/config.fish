@@ -14,12 +14,9 @@ abbr -a -g gs git status
 abbr -a -g gr git rebase
 abbr -a -g gco git checkout
 
-alias j='z'
-alias jb='z -b'
-alias ji='z -i'
-alias jd='z -c' # restrict match to subdirs
 alias '...'='cd ../.. && pwd'
 alias '....'='cd ../../.. && pwd'
+
 
 switch (lsb_release -d)
     case "*Ubuntu*"
@@ -41,7 +38,7 @@ function list_dir --on-variable PWD
 end
 
 # you can modify path here
-set -x PATH $PATH $HOME/.local/bin/ ~/source/kitty/kitty/launcher/
+set -x PATH $PATH $HOME/.local/bin/ $HOME/.cargo/bin
 
 # set length of prompt directories
 #set -g fish_prompt_pwd_dir_length
