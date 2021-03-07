@@ -1,9 +1,0 @@
-macro m set browser "/usr/bin/mpv %u"; open-in-browser ; set browser "/usr/bin/firefox %u"
-
-bind-key k up
-bind-key j down
-bind-key h prev
-bind-key l next
-
-browser firefox
-
