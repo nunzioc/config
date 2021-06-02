@@ -1,0 +1,68 @@
+// RainbowBrackets Preferences – User
+// ====================================================
+
+{
+    "brackets": {
+        "pairs": {
+            "(": ")",
+            "[": "]",
+            "{": "}"
+        },
+
+        "filetypes": {
+            "default": {
+                "opening": ["(", "[", "{"],
+                "ignored_scopes": [
+                    "comment", "string"
+                ]
+            },
+
+            "scheme": {
+                "opening": ["(", "[", "{"],
+                "ignored_scopes": [
+                    "comment", "string", "constant.character", "symbol"
+                ],
+                "extensions": [
+                    "scm",
+                    "ss"
+                ]
+            },
+
+            "json": {
+                "opening": ["[", "{"],
+                "ignored_scopes": [
+                    "comment", "string"
+                ],
+                "extensions": [
+                    "json",
+                    "sublime-settings",
+                    "sublime-menu",
+                    "sublime-build",
+                    "sublime-keymap",
+                    "sublime-commands",
+                    "sublime-theme",
+                    "sublime-color-scheme"
+                ]
+            },
+
+            "python": {
+                "opening": ["(", "[", "{"],
+                "ignored_scopes": [
+                    "comment", "string"
+                ]
+            }
+        }
+    },
+	"rainbow_colors": {
+        "matched": [
+            "hsl(99%, 30%, 68%)",   /* level1  */
+            "hsl(70%, 40%, 68%)",   /* level2  */
+            "hsl(24%, 80%, 78%)",   /* level3  */
+            "hsl(14%, 80%, 58%)",   /* level4  */
+            "hsl(20%, 30%, 58%)",   /* level5  */
+            "hsl(50%, 10%, 58%)",   /* level6  */
+            "hsl(80%, 30%, 98%)"    /* level7  */
+        ],
+        "mismatched": "#FF0000"
+    }
+}
