@@ -40,7 +40,7 @@ chpwd() { ls }
 # Aliases:
 # manage config files
 alias config="/usr/bin/git --git-dir=$HOME/.configrepo/ --work-tree=$HOME"
-alias csync="config commit --allow-empty -am 'sync' && config pull && config push"
+alias csync="config commit --allow-empty -am 'sync' && config pull && config submodule update --init --recursive && config push"
 
 [ -e .zshalias ] && source .zshalias
 
