@@ -16,7 +16,8 @@ abbr -a -g gco git checkout
 
 alias '...'='cd ../.. && pwd'
 alias '....'='cd ../../.. && pwd'
-
+alias 'pp'='pepper --config ~/.config/pepper/config.pp'
+alias 'nk'='rlwrap ~/source/k/k ~/source/k/repl.k'
 
 switch (lsb_release -d)
     case "*Ubuntu*"
@@ -58,3 +59,5 @@ end
 
 # opam configuration
 source /home/ncicone/.opam/opam-init/init.fish > /dev/null 2> /dev/null; or true
+# comment
+alias ocmanage "~/projects/operations-center/oc/ENV/bin/python $oc/oc/manage.py"

@@ -48,6 +48,10 @@ awful.spawn.with_shell('sh ~/.config/awesome/lockscript.sh');
 -- Themes define colours, icons, font and wallpapers.
 beautiful.init("~/.config/awesome/theme.lua")
 
+-- vmware tools
+awful.spawn.with_shell('vmware-user-suid-wrapper --no-startup-id')
+
+
 terminal = "kitty --single-instance"
 editor = os.getenv("EDITOR") or "vi"
 editor_cmd = terminal .. " -e " .. editor
@@ -229,7 +233,7 @@ globalkeys = gears.table.join(
               {description = "restore minimized", group = "client"}),
 
     -- Prompt
-    awful.key({ "Control" },            ";",     function () awful.screen.focused().mypromptbox:run() end,
+    awful.key({ modkey },            ";",     function () awful.screen.focused().mypromptbox:run() end,
               {description = "run prompt", group = "launcher"}),
 
     awful.key({ modkey }, "x",

@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # Lines configured by zsh-newuser-install
 HISTFILE=.histfile
 HISTSIZE=10000
@@ -16,14 +23,16 @@ compinit
 path+=$HOME/.local/bin
 
 # prompt showing red error codes
-PROMPT='%(?..%F{red}%?%f)%# '
+# PROMPT='%(?..%F{red}%?%f)%# '
+# powerlevel10k them
+source $HOME/.config/zsh/powerlevel10k/powerlevel10k.zsh-theme
 
 # Completion for kitty
 kitty + complete setup zsh | source /dev/stdin
 
 # initialize z.lua
-eval "$(lua $HOME/source/z.lua/z.lua --init zsh enhanced once)"
-export _ZL_ECHO=1
+# eval "$(lua $HOME/source/z.lua/z.lua --init zsh enhanced once)"
+# export _ZL_ECHO=1
 
 # always ls after changing dir
 chpwd() { ls }
@@ -67,4 +76,7 @@ alias gl="git log --oneline --graph --decorate -n 15"
 alias gd="git diff --histogram --word-diff=color"
 alias gco="git checkout"
 
-source $HOME/.config/broot/launcher/bash/br
+# source $HOME/.config/broot/launcher/bash/br
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
