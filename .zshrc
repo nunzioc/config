@@ -24,8 +24,11 @@ path+=$HOME/.local/bin
 
 # prompt showing red error codes
 # PROMPT='%(?..%F{red}%?%f)%# '
-# powerlevel10k them
+
+# powerlevel10k theme
 source $HOME/.config/zsh/powerlevel10k/powerlevel10k.zsh-theme
+# fish like autosuggestions
+source $HOME/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Completion for kitty
 kitty + complete setup zsh | source /dev/stdin
