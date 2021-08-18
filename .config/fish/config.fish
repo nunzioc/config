@@ -38,7 +38,7 @@ function list_dir --on-variable PWD
 end
 
 # you can modify path here
-set -x PATH $PATH $HOME/.local/bin/ $HOME/.cargo/bin
+set -x PATH $PATH $HOME/.local/bin/ $HOME/.cargo/bin $HOME/.emacs.d/bin
 
 # set length of prompt directories
 #set -g fish_prompt_pwd_dir_length
@@ -55,6 +55,8 @@ set -g fish_key_bindings hybrid_bindings
 # disable vi mode prompt
 function fish_mode_prompt
 end
+
+starship init fish | source
 
 # opam configuration
 source /home/ncicone/.opam/opam-init/init.fish > /dev/null 2> /dev/null; or true
