@@ -1,0 +1,8 @@
+[Unit]
+Description=Kakoune
+
+[Service]
+ExecStart=/bin/zsh /home/user/.config/kak/script.sh
+
+[Install]
+WantedBy=default.target

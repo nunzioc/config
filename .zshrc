@@ -24,11 +24,20 @@ path+=$HOME/.local/bin
 
 # prompt showing red error codes
 # PROMPT='%(?..%F{red}%?%f)%# '
-# powerlevel10k them
+
+# plugins
+# powerlevel10k theme
 source $HOME/.config/zsh/powerlevel10k/powerlevel10k.zsh-theme
+# fish like autosuggestions
+source $HOME/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+# fish like syntax highlighting
+source $HOME/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Completion for kitty
 kitty + complete setup zsh | source /dev/stdin
+
+# enable direnv
+eval "$(direnv hook zsh)"
 
 # initialize z.lua
 # eval "$(lua $HOME/source/z.lua/z.lua --init zsh enhanced once)"
@@ -36,6 +45,14 @@ kitty + complete setup zsh | source /dev/stdin
 
 # always ls after changing dir
 chpwd() { ls }
+# no beeping noise please
+setopt nobeep
+# interpret a single value as `cd $value` if the value isn't a command
+setopt autocd
+# allow more complex glob patterns
+setopt extendedglob
+# simple spellcheck of commands
+setopt correct
 
 # Aliases:
 # manage config files
@@ -49,7 +66,7 @@ alias py="python"
 
 os=$(lsb_release -d)
 case $os in
-    *Ubntu*)
+    *Ubuntu*)
         alias s="sudo apt search"
         alias i="sudo apt install" ;;
     *Fedora*)
@@ -80,3 +97,5 @@ alias gco="git checkout"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+oc=~/projects/operations-center/oc
+kim=/home/user/projects/kim
