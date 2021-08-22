@@ -32,6 +32,14 @@ source $HOME/.config/zsh/powerlevel10k/powerlevel10k.zsh-theme
 source $HOME/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 # fish like syntax highlighting
 source $HOME/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# zsh script for autojump
+source $HOME/.config/zsh/zsh-z/zsh-z.plugin.zsh
+autoload -U compinit && compinit
+zstyle ':completion:*' menu select
+ZSHZ_CMD=j
+ZSHZ_TILDE=1
+ZSHZ_UNCOMMON=1
+
 
 # Completion for kitty
 kitty + complete setup zsh | source /dev/stdin
