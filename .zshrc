@@ -33,12 +33,12 @@ source $HOME/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 # fish like syntax highlighting
 source $HOME/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # zsh script for autojump
+export ZSHZ_CMD=j
+export ZSHZ_TILDE=1
+export ZSHZ_UNCOMMON=1
 source $HOME/.config/zsh/zsh-z/zsh-z.plugin.zsh
 autoload -U compinit && compinit
 zstyle ':completion:*' menu select
-ZSHZ_CMD=j
-ZSHZ_TILDE=1
-ZSHZ_UNCOMMON=1
 
 
 # Completion for kitty
@@ -84,10 +84,6 @@ case $os in
         alias s="echo 'Error: No search alias for this OS'"
         alias i="echo 'Error: No install alias for this OS'" ;;
 esac
-
-alias j="z"
-alias b="z -b"
-alias ji="z -i"
 
 alias gs="git status"
 alias gc="git commit"
