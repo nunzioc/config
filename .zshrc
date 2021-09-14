@@ -6,18 +6,18 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # Lines configured by zsh-newuser-install
-HISTFILE=.histfile
-HISTSIZE=10000
-SAVEHIST=10000
+HISTFILE=$HOME/.histfile
+HISTSIZE=100000
+SAVEHIST=100000
 setopt notify
 unsetopt autocd beep
 bindkey -e
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
-zstyle :compinstall filename '$HOME/.zshrc'
+# zstyle :compinstall filename '$HOME/.zshrc'
 
-autoload -Uz compinit
-compinit
+# autoload -Uz compinit
+# compinit
 # End of lines added by compinstall
 
 path+=$HOME/.local/bin
@@ -25,7 +25,29 @@ path+=$HOME/.local/bin
 # prompt showing red error codes
 # PROMPT='%(?..%F{red}%?%f)%# '
 
+setopt share_history
+export HISTTIMEFORMAT="[%F %T] "
+setopt hist_find_no_dups
+
+# completion options
+setopt complete_in_word
+setopt always_to_end
+setopt path_dirs
+setopt auto_list
+autoload -U compinit && compinit
+# match anwhere in a word
+zstyle ':completion:*' matcher-list '' '' '' 'l:|=*' 'r:|=*'
+
+# _history-incremental-search-backward () {
+#     zle .history-incremental-search-backward $BUFFER
+# }
+# zle -N history-incremental-search-backward _history-incremental-search-backward
+
 # plugins
+# autocomplete
+# source $HOME/.config/zsh/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+# zstyle ':autocomplete:*' min-delay 0.5
+# zstyle ':autocomplete:*' min-input 5
 # powerlevel10k theme
 source $HOME/.config/zsh/powerlevel10k/powerlevel10k.zsh-theme
 # fish like autosuggestions
@@ -37,8 +59,7 @@ export ZSHZ_CMD=j
 export ZSHZ_TILDE=1
 export ZSHZ_UNCOMMON=1
 source $HOME/.config/zsh/zsh-z/zsh-z.plugin.zsh
-autoload -U compinit && compinit
-zstyle ':completion:*' menu select
+
 
 
 # Completion for kitty
@@ -85,8 +106,11 @@ case $os in
         alias i="echo 'Error: No install alias for this OS'" ;;
 esac
 
+alias ...="cd ../.."
+alias ....="cd ../../.."
+
 alias gs="git status"
-alias gc="git commit"
+alias gc="git commit -m"
 alias gf="git fetch -p --tags"
 alias gp="git pull"
 alias gb="git branch -a"
