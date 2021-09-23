@@ -110,7 +110,7 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 
 alias gs="git status"
-alias gc="git commit -m"
+alias gc="git commit"
 alias gf="git fetch -p --tags"
 alias gp="git pull"
 alias gb="git branch -a"
