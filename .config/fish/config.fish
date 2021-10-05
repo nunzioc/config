@@ -61,5 +61,3 @@ end
 
 # opam configuration
 source /home/ncicone/.opam/opam-init/init.fish > /dev/null 2> /dev/null; or true
-# comment
-alias ocmanage "~/projects/operations-center/oc/ENV/bin/python $oc/oc/manage.py"

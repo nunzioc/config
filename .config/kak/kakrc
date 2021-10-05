@@ -38,8 +38,9 @@ map global user N ':remove-highlighter global/number-lines<ret>' -docstring 'rem
 declare-user-mode snippets
 map global normal <a-space> ':enter-user-mode snippets<ret>'
 hook global WinSetOption filetype=(python) %{
+	map global snippets l 'yilogger.info("<esc>a")<esc>ologger.info(' -docstring 'logger'
 	map global snippets b 'obreakpoint()<esc>' -docstring 'breakpoint()'
-	map global snippets p 'iimport pprint; pprint.pp('
+	map global snippets p 'iimport pprint; pprint.pp(' -docstring 'pprint'
 }
 # tab stuff
 set global indentwidth 4

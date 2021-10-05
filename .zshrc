@@ -13,12 +13,6 @@ setopt notify
 unsetopt autocd beep
 bindkey -e
 # End of lines configured by zsh-newuser-install
-# The following lines were added by compinstall
-# zstyle :compinstall filename '$HOME/.zshrc'
-
-# autoload -Uz compinit
-# compinit
-# End of lines added by compinstall
 
 path+=$HOME/.local/bin
 
@@ -28,15 +22,6 @@ path+=$HOME/.local/bin
 setopt share_history
 export HISTTIMEFORMAT="[%F %T] "
 setopt hist_find_no_dups
-
-# completion options
-setopt complete_in_word
-setopt always_to_end
-setopt path_dirs
-setopt auto_list
-autoload -U compinit && compinit
-# match anwhere in a word
-zstyle ':completion:*' matcher-list '' '' '' 'l:|=*' 'r:|=*'
 
 # _history-incremental-search-backward () {
 #     zle .history-incremental-search-backward $BUFFER
@@ -51,6 +36,7 @@ zstyle ':completion:*' matcher-list '' '' '' 'l:|=*' 'r:|=*'
 # powerlevel10k theme
 source $HOME/.config/zsh/powerlevel10k/powerlevel10k.zsh-theme
 # fish like autosuggestions
+export ZSH_AUTOSUGGEST_STRATEGY=(match_prev_cmd completion)
 source $HOME/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 # fish like syntax highlighting
 source $HOME/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -58,8 +44,19 @@ source $HOME/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export ZSHZ_CMD=j
 export ZSHZ_TILDE=1
 export ZSHZ_UNCOMMON=1
+export ZSHZ_TRAILING_SLASH=1
 source $HOME/.config/zsh/zsh-z/zsh-z.plugin.zsh
 
+
+# completion options
+setopt complete_in_word
+setopt always_to_end
+setopt path_dirs
+setopt auto_list
+autoload -U compinit && compinit
+# match anwhere in a word
+zstyle ':completion:*' matcher-list '' '' '' 'l:|=*' 'r:|=*'
+zstyle ':completion:*' menu select
 
 
 # Completion for kitty
@@ -67,6 +64,10 @@ kitty + complete setup zsh | source /dev/stdin
 
 # enable direnv
 eval "$(direnv hook zsh)"
+
+# change what counts as a word.
+# all of these chars *?_-.[]~=/&;!#$%^(){}<> will count as word boundries
+WORDCHARS=''
 
 # initialize z.lua
 # eval "$(lua $HOME/source/z.lua/z.lua --init zsh enhanced once)"
@@ -90,7 +91,24 @@ alias csync="config commit --allow-empty -am 'sync' && config pull && config sub
 
 [ -e .zshalias ] && source .zshalias
 
-alias k="kak -c main"
+
+open_kakoune() {
+    repopwd=$(git rev-parse --show-toplevel 2>/dev/null)
+    if [[ $? -eq 0 ]]
+    then
+        local reponame=$repopwd:t
+        kak -c $reponame $* 2>/dev/null
+        if [[ $? -ne 0 ]]
+        then
+            kak -d -s $reponame &!
+            kak -c $reponame $*
+        fi
+    else
+        kak $*
+    fi
+}
+
+alias k="open_kakoune"
 alias py="python"
 
 os=$(lsb_release -d)
@@ -121,9 +139,8 @@ alias gl="git log --oneline --graph --decorate -n 15"
 alias gd="git diff --histogram --word-diff=color"
 alias gco="git checkout"
 
+[[ ! -f $HOME/.config/zsh/local.zsh ]] || source $HOME/.config/zsh/local.zsh
 # source $HOME/.config/broot/launcher/bash/br
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-oc=~/projects/operations-center/oc
-kim=/home/user/projects/kim
