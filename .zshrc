@@ -16,8 +16,8 @@ bindkey -e
 # The following lines were added by compinstall
 zstyle :compinstall filename '$HOME/.zshrc'
 
-autoload -Uz compinit
-compinit
+# autoload -Uz compinit
+# compinit
 # End of lines added by compinstall
 
 path+=$HOME/.local/bin
@@ -38,7 +38,7 @@ export ZSHZ_TILDE=1
 export ZSHZ_UNCOMMON=1
 source $HOME/.config/zsh/zsh-z/zsh-z.plugin.zsh
 autoload -U compinit && compinit
-zstyle ':completion:*' menu select
+zstyle ':completion:*' menu _approximate _expand_alias select
 
 
 # Completion for kitty
