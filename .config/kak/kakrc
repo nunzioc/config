@@ -20,7 +20,7 @@ map global normal q ':b ' -docstring 'buffers'
 hook global RegisterModified '"' %{ nop %sh{
     printf %s "$kak_main_reg_dquote" | xsel --input --clipboard
 }}
-map global user P 'xsel --output --clipboard<ret>' -docstring 'paste'
+map global user P '!xsel --output --clipboard<ret>' -docstring 'paste'
 map global user p '<a-!>xsel --output --clipboard<ret>'
 
 # write/quit convenience
@@ -38,8 +38,9 @@ map global user N ':remove-highlighter global/number-lines<ret>' -docstring 'rem
 declare-user-mode snippets
 map global normal <a-space> ':enter-user-mode snippets<ret>'
 hook global WinSetOption filetype=(python) %{
+	map global snippets l 'yilogger.info("<esc>a")<esc>ologger.info(' -docstring 'logger'
 	map global snippets b 'obreakpoint()<esc>' -docstring 'breakpoint()'
-	map global snippets p 'iimport pprint; pprint.pp('
+	map global snippets p 'iimport pprint; pprint.pp(' -docstring 'pprint'
 }
 # tab stuff
 set global indentwidth 4
