@@ -13,7 +13,6 @@ map global user F ':grep ' -docstring 'find'
 map global user c ':comment-line<ret>' -docstring 'comment line'
 map global user t ':ctags-search<ret>' -docstring 'ctags search sel'
 map global user T ':ctags-search ' -docstring 'ctags search'
-map global normal q ':b ' -docstring 'buffers'
 
 
 # System Copy and Paste
@@ -45,6 +44,13 @@ hook global WinSetOption filetype=(python) %{
 # tab stuff
 set global indentwidth 4
 set global tabstop 4
+
+# emacs keys
+map global insert <c-w> '<esc>bdi'
+map global insert <c-a> '<esc>ghi'
+map global insert <c-e> '<esc>gli'
+map global insert <c-b> '<esc>hi'
+map global insert <c-f> '<esc>li'
 
 # change color during insert mode (only looks good with gruvbox)
 # hook global ModeChange push:.*:insert %{
@@ -81,3 +87,19 @@ hook global ModuleLoaded kitty %{
 # switch ; and :
 map global normal ';' ':' -docstring 'switch ;'
 map global normal ':' ';' -docstring 'switch :'
+
+# use kakoune-buffer-switcher
+map global normal q ':buffer-switcher<ret>'
+face global BufferSwitcherCurrent rgb:B48EAD
+
+# configure delapouite/kakoune-buffers
+# map global user b ':enter-buffers-mode<ret>' -docstring 'buffers mode'
+# map global normal q ':info-buffers<ret>' -docstring 'locked buffers mode'
+
+# alias global bd delete-buffer
+# alias global bf buffer-first
+# alias global bl buffer-last
+# alias global bo buffer-only
+# alias global bo! buffer-only-force
+
+# set-option global max_list_buffers 20
