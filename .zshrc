@@ -35,24 +35,30 @@ setopt hist_find_no_dups
 # zle -N history-incremental-search-backward _history-incremental-search-backward
 
 # plugins
+CONFIG_DIR=$HOME/.config/zsh
 # autocomplete
 # source $HOME/.config/zsh/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 # zstyle ':autocomplete:*' min-delay 0.5
 # zstyle ':autocomplete:*' min-input 5
 # powerlevel10k theme
-source $HOME/.config/zsh/powerlevel10k/powerlevel10k.zsh-theme
+source $CONFIG_DIR/powerlevel10k/powerlevel10k.zsh-theme
 # fish like autosuggestions
-export ZSH_AUTOSUGGEST_STRATEGY=(match_prev_cmd completion)
-source $HOME/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+source $CONFIG_DIR/zsh-autosuggestions/zsh-autosuggestions.zsh
 # fish like syntax highlighting
-source $HOME/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $CONFIG_DIR/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+# fish like aabbreviations
+source $CONFIG_DIR/zsh-abbr/zsh-abbr.zsh
+# history multi word search
+source $CONFIG_DIR/history-search-multi-word/history-search-multi-word.plugin.zsh
 # zsh script for autojump
 export ZSHZ_CMD=j
 export ZSHZ_TILDE=1
 export ZSHZ_UNCOMMON=1
 export ZSHZ_TRAILING_SLASH=1
 source $HOME/.config/zsh/zsh-z/zsh-z.plugin.zsh
-
+# per directory history. press ^G to toggle between local and global histories
+source $HOME/.config/zsh/per-directory-history/per-directory-history.zsh
 
 # completion options
 setopt complete_in_word
@@ -133,17 +139,18 @@ esac
 alias ...="cd ../.."
 alias ....="cd ../../.."
 
-alias gs="git status"
-alias gc="git commit"
-alias gf="git fetch -p --tags"
-alias gp="git pull"
-alias gb="git branch -a"
-alias gr="git rebase"
-alias grcon="git rebase --continue"
-alias ga="git add . -v"
-alias gl="git log --oneline --graph --decorate -n 15"
-alias gd="git diff --histogram --word-diff=color"
-alias gco="git checkout"
+# make sure the abbreviation file exists. these should already be there
+# abbr gs="git status"
+# abbr gc="git commit"
+# abbr gf="git fetch -p --tags"
+# abbr gp="git pull"
+# abbr gb="git branch -a"
+# abbr gr="git rebase"
+# abbr grcon="git rebase --continue"
+# abbr ga="git add . -v"
+# abbr gl="git log --oneline --graph --decorate -n 15"
+# abbr gd="git diff --histogram --word-diff=color"
+# abbr gco="git checkout"
 
 [[ ! -f $HOME/.config/zsh/local.zsh ]] || source $HOME/.config/zsh/local.zsh
 # source $HOME/.config/broot/launcher/bash/br
