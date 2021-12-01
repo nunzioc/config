@@ -60,6 +60,8 @@ source $HOME/.config/zsh/zsh-z/zsh-z.plugin.zsh
 # per directory history. press ^G to toggle between local and global histories
 source $HOME/.config/zsh/per-directory-history/per-directory-history.zsh
 
+# add directories to stack
+setopt auto_pushd
 # completion options
 setopt complete_in_word
 setopt always_to_end
@@ -69,7 +71,7 @@ autoload -U compinit && compinit
 # match anwhere in a word
 zstyle ':completion:*' matcher-list '' '' '' 'l:|=*' 'r:|=*'
 zstyle ':completion:*' menu select
-
+zstyle ':completion:*:directory-stack' list-colors '=(#b) #([0-9]#)*( *)==95=38;5;12' # colors for cd -
 
 # Completion for kitty
 kitty + complete setup zsh | source /dev/stdin
@@ -112,7 +114,8 @@ open_kakoune() {
         kak -c $reponame $* 2>/dev/null
         if [[ $? -ne 0 ]]
         then
-            kak -d -s $reponame &!
+            kak -d -s $reponame -E ":cd $repopwd" &!
+            sleep .1
             kak -c $reponame $*
         fi
     else
@@ -123,6 +126,7 @@ open_kakoune() {
 alias k="open_kakoune"
 alias py="python"
 
+# todo: make these abbreviations
 os=$(lsb_release -d)
 case $os in
     *Ubuntu*)
