@@ -9,7 +9,7 @@ local dpi = require("beautiful.xresources").apply_dpi
 
 -- Main
 local theme      = {}
-theme.wallpaper  =  "~/.config/awesome/mountainwallpaper.png"
+theme.wallpaper  =  "~/wallpapers/mountain2.jpg"
 theme.font       = "Fira Code 8"
 
 -- Colors

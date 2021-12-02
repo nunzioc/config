@@ -41,6 +41,7 @@ CONFIG_DIR=$HOME/.config/zsh
 # zstyle ':autocomplete:*' min-delay 0.5
 # zstyle ':autocomplete:*' min-input 5
 # powerlevel10k theme
+# POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS+=proxy
 source $CONFIG_DIR/powerlevel10k/powerlevel10k.zsh-theme
 # fish like autosuggestions
 export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
