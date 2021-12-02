@@ -27,13 +27,13 @@
 	url = https://github.com/jimhester/per-directory-history.git
 [submodule ".config/zsh/fast-syntax-highlighting"]
 	path = .config/zsh/fast-syntax-highlighting
-	url = https://github.com/zdharma/fast-syntax-highlighting.git
+	url = https://github.com/zdharma-continuum/fast-syntax-highlighting.git
 [submodule ".config/zsh/zsh-abbr"]
 	path = .config/zsh/zsh-abbr
 	url = https://github.com/olets/zsh-abbr.git
 [submodule ".config/zsh/history-search-multi-word"]
 	path = .config/zsh/history-search-multi-word
-	url = https://github.com/zdharma/history-search-multi-word.git
+	url = https://github.com/zdharma-continuum/history-search-multi-word.git
 [submodule ".config/kak/autoload/kak-ansi"]
 	path = .config/kak/autoload/kak-ansi
 	url = https://github.com/eraserhd/kak-ansi.git
