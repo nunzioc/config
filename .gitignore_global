@@ -2,3 +2,4 @@
 .kak.tags.namecache
 **/*.kak.*
 tags
+*.map

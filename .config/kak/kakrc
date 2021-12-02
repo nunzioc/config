@@ -84,10 +84,6 @@ hook global ModuleLoaded kitty %{
   alias global popup kitty-terminal-tab # or kitty-terminal
 }
 
-# switch ; and :
-map global normal ';' ':' -docstring 'switch ;'
-map global normal ':' ';' -docstring 'switch :'
-
 # use kakoune-buffer-switcher
 map global normal q ':buffer-switcher<ret>'
 face global BufferSwitcherCurrent rgb:B48EAD
