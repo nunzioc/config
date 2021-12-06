@@ -3,7 +3,7 @@ setxkbmap -option caps:ctrl_modifier
 export PATH=~/.npm-global/bin:$PATH
 if type "kak" >/dev/null; then
     export EDITOR=kak
-    export PAGER=kak
+    # export PAGER=kak
 fi
 
 # use local profile settings if it exists
