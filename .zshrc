@@ -81,8 +81,7 @@ kitty + complete setup zsh | source /dev/stdin
 eval "$(direnv hook zsh)"
 
 # change what counts as a word.
-# all of these chars *?_-.[]~=/&;!#$%^(){}<> will count as word boundries
-WORDCHARS=''
+WORDCHARS='~!#$%^&*<>+;-'
 
 # initialize z.lua
 # eval "$(lua $HOME/source/z.lua/z.lua --init zsh enhanced once)"
