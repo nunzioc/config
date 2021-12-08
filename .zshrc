@@ -143,19 +143,6 @@ esac
 alias ...="cd ../.."
 alias ....="cd ../../.."
 
-# make sure the abbreviation file exists. these should already be there
-# abbr gs="git status"
-# abbr gc="git commit"
-# abbr gf="git fetch -p --tags"
-# abbr gp="git pull"
-# abbr gb="git branch -a"
-# abbr gr="git rebase"
-# abbr grcon="git rebase --continue"
-# abbr ga="git add . -v"
-# abbr gl="git log --oneline --graph --decorate -n 15"
-# abbr gd="git diff --histogram --word-diff=color"
-# abbr gco="git checkout"
-
 [[ ! -f $HOME/.config/zsh/local.zsh ]] || source $HOME/.config/zsh/local.zsh
 # source $HOME/.config/broot/launcher/bash/br
 
