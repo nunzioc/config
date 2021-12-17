@@ -20,8 +20,6 @@ zstyle :compinstall filename '$HOME/.zshrc'
 # compinit
 # End of lines added by compinstall
 
-path+=$HOME/.local/bin
-
 # prompt showing red error codes
 # PROMPT='%(?..%F{red}%?%f)%# '
 
@@ -78,7 +76,7 @@ zstyle ':completion:*:directory-stack' list-colors '=(#b) #([0-9]#)*( *)==95=38;
 kitty + complete setup zsh | source /dev/stdin
 
 # enable direnv
-eval "$(direnv hook zsh)"
+# eval "$(direnv hook zsh)"
 
 # change what counts as a word.
 WORDCHARS='~!#$%^&*<>+;-'
