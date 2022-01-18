@@ -29,17 +29,6 @@
    :type git
    :host github
    :repo "ALSchwalm/janet-mode"))
-;;(straight-use-package
-;; '(ijanet
-;;   :type git
-;;   :host github
-;;   :repo "serialdev/ijanet-mode"))
-;;(add-hook 'janet-mode-hook
-;;	  (lambda ()
-;;	    (keymap-local-set "C-c C-p" #'ijanet)
-;;	    (keymap-local-set "C-c C-b" #'ijanet-eval-buffer)
-;;	    (keymap-local-set "C-c C-l" #'ijanet-eval-line)
-;;	    (keymap-local-set "C-c C-r" #'ijanet-eval-region)))
 
 (use-package s)
 (use-package dash)
