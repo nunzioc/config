@@ -37,3 +37,6 @@
 [submodule ".config/kak/autoload/kak-ansi"]
 	path = .config/kak/autoload/kak-ansi
 	url = git@github.com:eraserhd/kak-ansi.git
+[submodule ".config/kak/parinfer-rust"]
+	path = .config/kak/parinfer-rust
+	url = git@github.com:eraserhd/parinfer-rust.git
