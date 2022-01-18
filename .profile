@@ -8,4 +8,4 @@ fi
 
 # use local profile settings if it exists
 [ -f $HOME/.local_profile ] && source $HOME/.local_profile
-source "$HOME/.cargo/env"
+[ -f $HOME/.cargo/env ] && source $HOME/.cargo/env
