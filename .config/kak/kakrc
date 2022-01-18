@@ -42,7 +42,7 @@ hook global WinSetOption filetype=(python) %{
 	map global snippets p 'iimport pprint; pprint.pp(' -docstring 'pprint'
 }
 hook global WinSetOption filetype=(javascript) %{
-	map global snippets c 'oconsole.log("x", x);<esc>xsx<ret>c' -docstring 'console.log()'
+	map global snippets c 'oconsole.log({x});<esc>xsx<ret>c' -docstring 'console.log()'
 }
 # hook global WinSetOption filetype=(javascript) %{
     # map global snippets c 'oconsole.log("x",x);<esc>xsx<enter>c' -docstring 'console.log()'
