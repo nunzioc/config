@@ -9,3 +9,4 @@ fi
 # use local profile settings if it exists
 [ -f $HOME/.local_profile ] && source $HOME/.local_profile
 [ -f $HOME/.cargo/env ] && source $HOME/.cargo/env
+. "$HOME/.cargo/env"
