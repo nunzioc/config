@@ -30,7 +30,7 @@ gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings \
 # Launch Terminal
 $BEGINNING/custom0/ name "Terminal"
 $BEGINNING/custom0/ command "kitty"
-$BEGINNING/custom0/ binding "<Super><Enter>"
+$BEGINNING/custom0/ binding "<Super>Return"
 
 # Open up file browser
 $BEGINNING/custom1/ name "Nautilus"
