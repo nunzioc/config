@@ -58,6 +58,8 @@ map global insert <c-e> '<esc>gli'
 map global insert <c-b> '<esc>hi'
 map global insert <c-f> '<esc>li'
 
+# make sure crtl-[ is escape
+map global insert <c-[> '<esc>'
 # change color during insert mode (only looks good with gruvbox)
 # hook global ModeChange push:.*:insert %{
 #     set-face window PrimaryCursor rgb:ebdbb2,rgb:484848
@@ -78,7 +80,7 @@ hook global WinSetOption filetype=(python) %{
 }
 
 # configure python lsp
-set-option global lsp_server_configuration pyls.configurationSources=["flake8"]
+declare-option str lsp_server_configuration pyls.configurationSources=["flake8"]
 # set global lsp_cmd "kak-lsp -s %val{session} -vvv --log /tmp/kak-lsp.log"
 
 # connect
