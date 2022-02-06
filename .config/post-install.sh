@@ -25,6 +25,7 @@ mkdir .configrepo
 git clone --bare git@github.com/nunzioc/config.git ~/.configrepo
 alias config='/usr/bin/git --git-dir=$HOME/.configrepo/ --work-tree=$HOME'
 config config --local status.showUntrackedFiles no
+config config pull.rebase true
 config checkout
 config submodule update --init --recursive
 
