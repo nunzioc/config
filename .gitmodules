@@ -1,42 +1,42 @@
 [submodule ".config/zsh/powerlevel10k"]
 	path = .config/zsh/powerlevel10k
-	url = git@github.com:romkatv/powerlevel10k.git
+	url = https://github.com/romkatv/powerlevel10k.git
 [submodule ".config/zsh/zsh-autosuggestions"]
 	path = .config/zsh/zsh-autosuggestions
-	url = git@github.com:zsh-users/zsh-autosuggestions
+	url = https://github.com/zsh-users/zsh-autosuggestions
 [submodule ".config/zsh/zsh-syntax-highlighting"]
 	path = .config/zsh/zsh-syntax-highlighting
-	url = git@github.com:zsh-users/zsh-syntax-highlighting.git
+	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
 [submodule ".config/zsh/zsh-z"]
 	path = .config/zsh/zsh-z
-	url = git@github.com:agkozak/zsh-z.git
+	url = https://github.com/agkozak/zsh-z.git
 [submodule ".config/zsh/zsh-autocomplete"]
 	path = .config/zsh/zsh-autocomplete
-	url = git@github.com:marlonrichert/zsh-autocomplete.git
+	url = https://github.com/marlonrichert/zsh-autocomplete.git
 [submodule ".config/kak/autoload/kakoune-buffers"]
 	path = .config/kak/autoload/kakoune-buffers
-	url = git@github.com:Delapouite/kakoune-buffers.git
+	url = https://github.com/Delapouite/kakoune-buffers.git
 [submodule ".config/kak/autoload/kakoune-buffer-switcher"]
 	path = .config/kak/autoload/kakoune-buffer-switcher
-	url = git@github.com:occivink/kakoune-buffer-switcher.git
+	url = https://github.com/occivink/kakoune-buffer-switcher.git
 [submodule ".config/kak/autoload/kakoune-sudo-write"]
 	path = .config/kak/autoload/kakoune-sudo-write
-	url = git@github.com:occivink/kakoune-sudo-write.git
+	url = https://github.com/occivink/kakoune-sudo-write.git
 [submodule ".config/zsh/per-directory-history"]
 	path = .config/zsh/per-directory-history
-	url = git@github.com:jimhester/per-directory-history.git
+	url = https://github.com/jimhester/per-directory-history.git
 [submodule ".config/zsh/fast-syntax-highlighting"]
 	path = .config/zsh/fast-syntax-highlighting
-	url = git@github.com:zdharma-continuum/fast-syntax-highlighting.git
+	url = https://github.com/zdharma-continuum/fast-syntax-highlighting.git
 [submodule ".config/zsh/zsh-abbr"]
 	path = .config/zsh/zsh-abbr
-	url = git@github.com:olets/zsh-abbr.git
+	url = https://github.com/olets/zsh-abbr.git
 [submodule ".config/zsh/history-search-multi-word"]
 	path = .config/zsh/history-search-multi-word
-	url = git@github.com:zdharma-continuum/history-search-multi-word.git
+	url = https://github.com/zdharma-continuum/history-search-multi-word.git
 [submodule ".config/kak/autoload/kak-ansi"]
 	path = .config/kak/autoload/kak-ansi
-	url = git@github.com:eraserhd/kak-ansi.git
+	url = https://github.com/eraserhd/kak-ansi.git
 [submodule ".config/kak/parinfer-rust"]
 	path = .config/kak/parinfer-rust
-	url = git@github.com:eraserhd/parinfer-rust.git
+	url = https://github.com/eraserhd/parinfer-rust.git

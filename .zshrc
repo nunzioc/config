@@ -73,7 +73,7 @@ zstyle ':completion:*' menu select
 zstyle ':completion:*:directory-stack' list-colors '=(#b) #([0-9]#)*( *)==95=38;5;12' # colors for cd -
 
 # Completion for kitty
-kitty + complete setup zsh | source /dev/stdin
+# kitty + complete setup zsh | source /dev/stdin
 
 # enable direnv
 # eval "$(direnv hook zsh)"
@@ -125,7 +125,7 @@ alias k="open_kakoune"
 alias py="python"
 
 # todo: make these abbreviations
-os=$(lsb_release -d)
+os=$(uname -a)
 case $os in
     *Ubuntu*)
         alias s="sudo apt search"
@@ -133,6 +133,9 @@ case $os in
     *Fedora*)
         alias s="sudo dnf search"
         alias i="sudo dnf install" ;;
+    *Darwin*)
+        alias s="brew search"
+        alias i="brew install" ;;
     *)
         alias s="echo 'Error: No search alias for this OS'"
         alias i="echo 'Error: No install alias for this OS'" ;;
