@@ -6,4 +6,4 @@ they can be installed using:
 - alias config='/usr/bin/git --git-dir=$HOME/.configrepo/ --work-tree=$HOME'
 - config config --local status.showUntrackedFiles no
 - config checkout
-- config submodule --update --recursive
+- config submodule update --recursive

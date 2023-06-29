@@ -16,20 +16,9 @@ abbr -a -g gco git checkout
 
 alias '...'='cd ../.. && pwd'
 alias '....'='cd ../../.. && pwd'
-alias 'pp'='pepper --config ~/.config/pepper/config.pp'
-alias 'nk'='rlwrap ~/source/k/k ~/source/k/repl.k'
-
-switch (lsb_release -d)
-    case "*Ubuntu*"
-        abbr -a -g i sudo apt install
-    case "*Fedora*"
-        abbr -a -g i sudo dnf install
-end
 
 # turn off greeting message
 set fish_greeting
-
-set -xg EDITOR kak
 
 # run ls whenever the path changes
 function list_dir --on-variable PWD
@@ -57,7 +46,5 @@ set -g fish_key_bindings hybrid_bindings
 function fish_mode_prompt
 end
 
-# starship init fish | source
-
 # opam configuration
-source /home/ncicone/.opam/opam-init/init.fish > /dev/null 2> /dev/null; or true
+# source /home/ncicone/.opam/opam-init/init.fish > /dev/null 2> /dev/null; or true
