@@ -1,18 +1,7 @@
 #! /usr/bin/fish
 
-abbr -a -g py python
-abbr -a ru ruplacer
-abbr -a -g icat kitty +kitten icat
-abbr -a -g gf git fetch -p --tags
-abbr -a -g gp git pull
-abbr -a -g gl git log --oneline --graph --decorate -n 15
-abbr -a -g gc git commit -m
-abbr -a -g gb git branch -a
-abbr -a -g ga git add . -v
-abbr -a -g gd git diff --histogram --word-diff=color
-abbr -a -g gs git status
-abbr -a -g gr git rebase
-abbr -a -g gco git checkout
+source ./abbr.fish
+
 
 alias '...'='cd ../.. && pwd'
 alias '....'='cd ../../.. && pwd'
@@ -26,7 +15,7 @@ function list_dir --on-variable PWD
        ls
     end
 end
-
+# TODO switch to fish_add_path
 # you can modify path here
 set -x PATH $PATH $HOME/.local/bin/ $HOME/.cargo/bin $HOME/.emacs.d/bin
 
