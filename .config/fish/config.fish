@@ -1,10 +1,6 @@
 #! /usr/bin/fish
 
-source ./abbr.fish
-
-
-alias '...'='cd ../.. && pwd'
-alias '....'='cd ../../.. && pwd'
+source $HOME/.config/fish/abbr.fish
 
 # turn off greeting message
 set fish_greeting
@@ -19,21 +15,7 @@ end
 # you can modify path here
 set -x PATH $PATH $HOME/.local/bin/ $HOME/.cargo/bin $HOME/.emacs.d/bin
 
-# set length of prompt directories
-#set -g fish_prompt_pwd_dir_length
-
-# use vi bindings with emacs bindings
-function hybrid_bindings --description "vi style bindings that inherit emacs bindings"
-    for mode in default insert visual
-        fish_default_key_bindings -M $mode
-    end
-    fish_vi_key_bindings --no-erase
-end
-
-set -g fish_key_bindings hybrid_bindings
-# disable vi mode prompt
-function fish_mode_prompt
-end
+set -g fish_prompt_pwd_dir_length 6
 
 # opam configuration
 # source /home/ncicone/.opam/opam-init/init.fish > /dev/null 2> /dev/null; or true
