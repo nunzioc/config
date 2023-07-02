@@ -11,10 +11,9 @@ function list_dir --on-variable PWD
        ls
     end
 end
-# TODO switch to fish_add_path
 # you can modify path here
 set -x PATH $PATH $HOME/.local/bin/ $HOME/.cargo/bin $HOME/.emacs.d/bin
-
+set -g EDITOR micro
 set -g fish_prompt_pwd_dir_length 6
 
 # opam configuration

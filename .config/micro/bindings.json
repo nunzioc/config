@@ -1,0 +1,13 @@
+{
+    "Alt-/": "lua:comment.comment",
+    "Alt-b": "WordLeft",
+    "Alt-f": "WordRight",
+    "Alt-v": "CursorPageUp",
+    "Alt-x": "CommandMode",
+    "Ctrl-a": "StartOfLine",
+    "Ctrl-e": "EndOfLine",
+    "Ctrl-j": "JumpLine",
+    "Ctrl-k": "CutLine",
+    "Ctrl-r": "FindPrevious",
+    "CtrlUnderscore": "lua:comment.comment"
+}
