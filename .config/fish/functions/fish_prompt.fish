@@ -1,3 +1,4 @@
 function fish_prompt
-    echo -n '$ '
+    echo -n (hostname)
+    echo -n ' → '
 end

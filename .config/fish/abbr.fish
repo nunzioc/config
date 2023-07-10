@@ -11,3 +11,4 @@ abbr -a gd git diff --histogram --word-diff=color
 abbr -a gs git status
 abbr -a gr git rebase
 abbr -a gco git checkout
+abbr -a firefox flatpak run org.mozilla.firefox

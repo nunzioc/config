@@ -1,13 +1,21 @@
 {
     "Alt-/": "lua:comment.comment",
+    "Alt-\u003c": "CursorStart",
+    "Alt-\u003e": "CursorEnd",
     "Alt-b": "WordLeft",
     "Alt-f": "WordRight",
     "Alt-v": "CursorPageUp",
     "Alt-x": "CommandMode",
     "Ctrl-a": "StartOfLine",
+    "Ctrl-b": "CursorLeft",
     "Ctrl-e": "EndOfLine",
+    "Ctrl-f": "CursorRight",
     "Ctrl-j": "JumpLine",
     "Ctrl-k": "CutLine",
+    "Ctrl-n": "CursorDown",
+    "Ctrl-p": "CursorUp",
     "Ctrl-r": "FindPrevious",
+    "Ctrl-s": "Find",
+    "Ctrl-w": "DeleteWordLeft",
     "CtrlUnderscore": "lua:comment.comment"
 }
