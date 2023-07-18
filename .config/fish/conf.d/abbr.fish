@@ -12,3 +12,4 @@ abbr -a gs git status
 abbr -a gr git rebase
 abbr -a gco git checkout
 abbr -a firefox flatpak run org.mozilla.firefox
+abbr -a gsw git switch
