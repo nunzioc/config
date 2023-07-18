@@ -1,7 +1,5 @@
 #! /usr/bin/fish
 
-source $HOME/.config/fish/abbr.fish
-
 # turn off greeting message
 set fish_greeting
 
