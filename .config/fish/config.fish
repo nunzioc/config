@@ -7,7 +7,7 @@ set fish_greeting
 bind \ek "echo; prevd; commandline -f repaint"
 bind \ej "echo; nextd; commandline -f repaint"
 
-# run ls whenever the path changes
+# run ls whenever the path changes (note: seems broken with transient prompt)
 function list_dir --on-variable PWD
     if test (ls | wc -l) -lt 20
        ls
