@@ -1,3 +1,5 @@
 {
-    "autosave": 2
+    "autosave": 2,
+    "softwrap": true,
+    "wordwrap": true
 }
