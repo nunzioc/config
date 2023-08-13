@@ -169,7 +169,7 @@ function __z -d "Jump to a recent directory."
             echo "Not sure how to open file manager"; and return 1
         end
     else
-        set -g fish_prompt_pwd_dir_length 10
+        set_color blue; echo (prompt_pwd $target); set_color normal;
         pushd "$target"
     end
 end
