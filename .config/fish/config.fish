@@ -7,12 +7,6 @@ set fish_greeting
 bind \ek "echo; prevd; commandline -f repaint"
 bind \ej "echo; nextd; commandline -f repaint"
 
-# run ls whenever the path changes (note: seems broken with transient prompt)
-function list_dir --on-variable PWD
-    if test (ls | wc -l) -lt 20
-       ls
-    end
-end
 # you can modify path here
 set -x PATH $PATH $HOME/.local/bin/ $HOME/.cargo/bin $HOME/.emacs.d/bin
 set -g EDITOR micro
