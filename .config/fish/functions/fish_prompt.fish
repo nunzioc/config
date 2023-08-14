@@ -8,7 +8,7 @@ function fish_prompt
     if test $last_status -gt 0
         set_color red;
         echo -n $last_status:' '
-    else if test $transient_status -gt 0
+    else if not test -z $transient_status && test $transient_status -gt 0
         set_color red;
         echo -n $transient_status:' '
     else

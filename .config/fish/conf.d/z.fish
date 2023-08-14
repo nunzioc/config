@@ -18,7 +18,7 @@ if test -z "$Z_CMD"
     set -U Z_CMD z
 end
 
-set -U ZO_CMD zo
+set -U ZO_CMD "$Z_CMD"o
 
 if test ! -z $Z_CMD
     function $Z_CMD -d "jump around"
