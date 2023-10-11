@@ -1,5 +1,6 @@
 {
     "autosave": 2,
+    "saveundo": true,
     "softwrap": true,
     "wordwrap": true
 }
