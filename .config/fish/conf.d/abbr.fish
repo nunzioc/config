@@ -5,7 +5,7 @@ abbr -a gf git fetch -p --tags
 abbr -a gp git pull
 abbr -a gl git log --oneline --graph --decorate -n 15
 abbr -a gc git commit -m
-abbr -a gb git branch -a
+abbr -a gb git branch -a --sort=-committerdate
 abbr -a ga git add . -v
 abbr -a gd git diff --histogram --word-diff=color
 abbr -a gs git status
@@ -13,3 +13,4 @@ abbr -a gr git rebase
 abbr -a gco git checkout
 abbr -a firefox flatpak run org.mozilla.firefox
 abbr -a gsw git switch
+abbr -a gst git stash -u
