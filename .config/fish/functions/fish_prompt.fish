@@ -4,6 +4,17 @@ function fish_prompt
     if test (hostname) = "toolbox"
         echo -n toolbox:
     end
+
+    # Retrieve the current number of background jobs
+    set job_count (count (jobs))
+    
+    # Set prompt structure
+    set_color $fish_color_cwd
+    if test $job_count -gt 0
+        echo -n "($job_count) "
+    end
+    set_color normal
+
     echo (prompt_pwd -d 3) (fish_git_prompt)
     if test $last_status -gt 0
         set_color red;
