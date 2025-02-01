@@ -16,6 +16,12 @@ function fish_prompt
     set_color normal
 
     echo (prompt_pwd -d 3) (fish_git_prompt)
+
+    # if jobs -q
+       # jobs -c | string join ', '
+    # end
+    # echo (prompt_pwd -d 4) (fish_git_prompt)
+
     if test $last_status -gt 0
         set_color red;
         echo -n $last_status:' '
